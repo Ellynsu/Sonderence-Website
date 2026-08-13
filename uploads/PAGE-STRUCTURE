@@ -1,0 +1,253 @@
+# Sonderence — Single-Page Site: Content & Structure Spec
+
+This document defines the content and section structure for the Sonderence marketing site.
+The **agent builds the page from this file**. It is the content layer (Layer 3); it must be
+rendered using the existing components and the Sonderence design-system tokens (Layer 1/2).
+
+**Design system is the source of truth.** Follow the uploaded Sonderence Design System bundle
+and `CLAUDE.md` for all visual decisions: Onest (600 display / 400 body) + IBM Plex Mono for
+numerals, the four-value navy/slate/silver/white palette, `border-radius: 0` everywhere (except
+the header utility pill), no shadows, no photography/stock imagery, stroke-only geometry, and
+the `↗ / →` arrow convention instead of icons.
+
+---
+
+## The organizing idea: the site IS the method
+
+Sonderence is research-driven, and the site should *demonstrate* that rather than assert it.
+The target reader is a data-driven operator / CEO who wants to see the reasoning and judge it
+themselves — not be sold to. So the page is structured as the **scientific method applied to
+business**: a clinical, evidence-first walk from examining the current state, through what's
+wrong and why, to what changes and how it's refined. The method is the abstraction; the services
+are the same story told concretely.
+
+**The arc (fixed sequence, interpreted loosely for business):**
+
+`Analysis → Diagnosis → Hypothesis → Methodology → Impact → Iteration`
+
+- **Analysis** — observe and examine how the business actually works today (data, systems, workflows) before forming any judgment.
+- **Diagnosis** — identify the real constraint, precisely, and prescribe the synopsis and strategy going forward.
+- **Hypothesis** — form an evidence-based, testable view of what will resolve it.
+- **Methodology** — the defined intervention: the operating-model design and build.
+- **Impact** — what measurably changed.
+- **Iteration** — refine as new evidence emerges; systems are never one-shot.
+
+- Keep copy declarative and confident, not tentative — "Hypothesis" signals research rigor; the
+  body under it must supply decisiveness so it never reads as guesswork.
+- Tone: calm, exact, evidence-led. No jargon-for-its-own-sake. Plain words, precisely used.
+- **The arc mirrors the services:** Analysis + Diagnosis ≈ Foundation; Hypothesis/Methodology ≈
+  Gnosis/Atlas/Bridge/Studio; Impact + Iteration ≈ Nexus. Let them reinforce each other.
+
+---
+
+## Global
+
+- **One page**, long-scroll. No separate routes.
+- **Nav links are in-page anchors** to the section IDs below (sentence case labels).
+- **Primary CTA everywhere = book a call** (the Foundation assessment). `[https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08]`
+- **Section numbering:** `01 /` … `NN /` in mono, zero-padded, per brand.
+- **Layout reference:** structural rhythm modeled on mercury.com — a repeating
+  "short declarative banner → cluster of titled blocks" cadence, threaded single CTA, dense footer.
+  **Borrow Mercury's structure, not its skin:** Mercury leans on photography, illustrated graphics,
+  and autoplay video, all of which the Sonderence design system forbids. Render every beat in
+  Sonderence's language — geometric navy/slate node-and-line diagrams, ruled columns, one restrained
+  reveal, no photos/video/parallax.
+- **Voice rules (from the design system — enforce in all copy):**
+  - Headlines: 2–4 words, sentence case, end in a period. No `?`, no `!`, no `:`.
+  - Body: one or two sentences, plain, no marketing intensifiers ("seamless", "cutting-edge", "powerful", etc.).
+  - UPPERCASE only for labels/eyebrows/tags, always wide-tracked.
+  - No emoji. Mixed British/American spelling as in source ("Colour", "-ize" verbs).
+
+---
+
+## Nav
+
+Four items only: **Our process** (dropdown) · **Services** · **About** · **[Book a call]** (utility pill button)
+ 
+- **Our process** — a dropdown grouping the six method stages, listed in arc order, each linking to
+  its in-page anchor:
+  `Analysis (#analysis)` · `Diagnosis (#diagnosis)` · `Hypothesis (#hypothesis)` ·
+  `Methodology (#methodology)` · `Impact (#impact)` · `Iteration (#iteration)`
+- **Services** - links to `#Services`.
+- **About** — links to `#About`.
+- **Book a call** — the utility pill button (the one permitted non-zero radius), links to booking.
+**Behaviour notes for the agent (usability, not decoration):**
+- The dropdown must be **click/tap-triggered, not hover-only** — hover menus are unusable on touch/mobile.
+- Dropdown items smooth-scroll to their section anchors; keep them in arc order.
+- Style the dropdown in brand language: square (radius 0), silver hairline, white ground, no shadow.
+  It is a ruled panel, not a floating card.
+- Keep the closed nav quiet: `Our process` and `About` in sentence case, the pill for `Book a call`.
+
+---
+
+## Hero — `#top` (navy ground)
+
+- **Eyebrow (label):** `SONDERENCE`
+- **Headline:** Technology that serves the business.  *(alt: "Built around the business.")*
+- **Subhead (slate, narrow right column, 1 sentence):**
+  Sonderence designs digital ecosystems around the way a business actually works — as an embedded partner, not an outside vendor.
+- **CTA:** Book your Foundation assessment → `[booking link]`
+- **Decorative:** the one permitted atmosphere element — large, faint (~9% white) concentric ring bleeding off the right edge, single white dot. No other decoration.
+
+---
+
+## 01 / Analysis — `#analysis` (white ground)
+
+*The observation stage. Examine how the business actually works today, before any judgment.*
+
+- **Label:** `01 / ANALYSIS`
+- **Headline:** We map what's there.  *(alt: "Observation before opinion.")*
+- **Body (1–2 sentences):** `[Before proposing solutions, we study how the business actually operates. We examine workflows, systems, data, decisions, and the people behind them to understand the current operating reality before forming conclusions.]`
+
+---
+
+## 02 / Diagnosis — `#diagnosis` (#F7F7F9 ground)
+
+*The judgment stage. What's actually wrong — the real constraint, named precisely.*
+
+- **Label:** `02 / DIAGNOSIS`
+- **Headline:** Tools multiply. Value doesn't.  *(alt: "Complexity accumulates quietly.")*
+- **Body (1–2 sentences):**
+  Processes should work for the business, within the business — not the other way around.
+  `[Most organizations don't suffer from a lack of technology they suffer from fragmented systems, disconnected processes, and operations that have outgrown the way they work. We identify the underlying constraint so every recommendation addresses the cause rather than the symptoms.]`
+
+---
+
+## 03 / Hypothesis — `#hypothesis` (white ground)
+
+*The evidence stage. The research-driven core — how Sonderence reaches a source of truth.*
+*This is where compiled research/insights will eventually live (see slots below).*
+
+- **Label:** `03 / HYPOTHESIS`
+- **Headline:** Evidence before action.  *(alt: "We reason to the source of truth.")*
+- **Body (1–2 sentences):** `[Every recommendation begins as a hypothesis grounded in evidence, not assumption. By combining research, operational data, and first-principles reasoning, we develop a testable understanding of what is most likely to create meaningful improvement before implementation begins.]`
+- **Research display slots** — *rendered as ruled data panels / navy-slate diagrams, NOT decorative charts:*
+  `[NEEDS INPUT — REAL DATA ONLY: this is where the future research-compiling skill outputs go.
+  Leave these slots empty/hidden until genuine findings exist. Fabricated research on a research-
+  driven site is the single fastest way to lose a data-driven reader — do not placeholder it with
+  plausible-looking numbers.]`
+
+---
+
+## 04 / Methodology — `#methodology` (#F7F7F9 ground)
+
+*The intervention stage. The defined method — how Sonderence designs the operating model.*
+
+- **Label:** `04 / METHODOLOGY`
+- **Headline:** We begin with the business.  *(alt: "Strategy before implementation.")*
+- **Body (1–2 sentences):** `[Our methodology combines systems thinking, first-principles analysis, and close collaboration to redesign how the business operates. Technology becomes an instrument of the operating model not its foundation ensuring every implementation serves a measurable business objective.]`
+- **Positioning contrasts** (four ruled columns / statement rows — brand voice already correct):
+  - Many firms begin with technology. Sonderence begins with the business.
+  - Many firms sell software. Sonderence designs operating models.
+  - Many firms build automations. Sonderence eliminates constraints.
+  - Many firms focus on implementation. Sonderence focuses on transformation.
+
+---
+
+## 05 / The working set — `#services` (white ground)
+
+*The services, framed as the concrete instrument of the method above.*
+
+- **Label:** `05 / THE WORK`
+- **Headline:** The working set.
+- **Framing (1 sentence):**
+  Every engagement begins with Foundation — a free digital transformation assessment — and grows from there.
+
+**Foundation (the on-ramp / the Analysis + Diagnosis stages made real — featured separately, not a priced tier):**
+- **Sonderence Foundation** — Digital Transformation Assessment. Free. The starting point for every engagement.
+  CTA: Book your assessment → `[booking link]`
+
+**The working set (five offerings, as ruled columns/rows — square, hairline-separated, no shadowed cards):**
+
+| # | Name | Offering | Investment |
+|---|------|----------|------------|
+| 01 | Sonderence Gnosis | Digital Assessment & Strategy Framework | $1,500 |
+| 02 | Sonderence Atlas | Data & Knowledge Architecture | Starting @ $1,500 |
+| 03 | Sonderence Bridge | Digital Systems Implementation | Starting @ $2,500 |
+| 04 | Sonderence Studio | Custom Digital Development | Starting @ $3,000 |
+| 05 | Sonderence Nexus | Digital Operations Partnership | Connect with us |
+
+- `[Sonderence Gnosis
+Develops a research-backed strategic framework that defines priorities, opportunities, and a practical transformation roadmap.
+
+Sonderence Atlas
+Designs the data and knowledge architecture that enables information to move reliably across the organization.
+
+Sonderence Bridge
+Implements integrated systems and workflows that connect people, software, and operations into a unified whole.
+
+Sonderence Studio
+Builds custom digital products, platforms, and experiences designed around your operating model rather than generic software.
+
+Sonderence Nexus
+Provides ongoing measurement, optimization, and strategic guidance as the business continues to evolve.]`
+- Use "Investment" language, never "price/cost/fee".
+
+---
+
+## 06 / Impact — `#impact` (navy or #F7F7F9 ground)
+
+*The results stage. What measurably changed — outcomes and use cases.*
+
+- **Label:** `06 / IMPACT`
+- **Headline:** Measured by what changes.  *(alt: "Systems, made visible.")*
+- **Body:** `[Operational clarity
+Teams gain visibility into how work flows across the organization, making better decisions with less friction.
+
+Connected systems
+Disconnected tools become integrated workflows that reduce manual effort and improve reliability.
+
+Scalable operations
+Processes are designed to grow alongside the business without introducing unnecessary complexity.
+
+Technology with purpose
+Every implementation is tied to a measurable business objective instead of adopting technology for its own sake.]`
+- **Stats strip** (mono numerals, ruled columns — Mercury pattern, Sonderence skin):
+  `[NEEDS INPUT — REAL METRICS ONLY: omit entirely if you don't have genuine numbers yet.]`
+- **Testimonials** (ruled, name + role in mono/uppercase — **no portrait photos**):
+  `[NEEDS INPUT: real client quotes only. Omit the block if none exist — do not fabricate.]`
+
+---
+
+## 07 / Iteration — `#iteration` (white ground)
+
+*The refinement stage. Systems aren't one-shot; this is the ongoing-partnership beat.*
+*Echoes the brand's "evidence-based & measured, willing to adjust" personality. Maps to Nexus.*
+
+- **Label:** `07 / ITERATION`
+- **Headline:** We adjust as evidence emerges.  *(alt: "Never finished, always measured.")*
+- **Body (1–2 sentences):** `[Transformation is an ongoing process rather than a one-time implementation. We continuously measure outcomes, reassess constraints, and refine systems as the business evolves, ensuring every improvement remains aligned with changing objectives.]`
+
+---
+
+## 08 / About — `#about` (#F7F7F9 ground)
+
+- **Label:** `08 / THE PRACTICE`
+- **Headline:** An embedded partner.  *(alt: "A calm intelligence.")*
+- **Body:** `[Sonderence is a digital transformation consulting and development firm that helps organizations design better ways of operating. We work as an embedded partner—combining strategy, systems design, and implementation—to solve operational constraints and create lasting organizational capability rather than one-off technical solutions.]`
+
+---
+
+## 09 / Contact — `#contact` (silver `#DBDBE2` ground — brand's closing-statement color)
+
+- **Label:** `09 / GET STARTED`
+- **Headline:** Transformation begins with clarity.
+- **Body (1 sentence):** Start with a Foundation assessment.
+- **CTA:** Book a call → `[booking link]`
+- **Footer meta (uppercase, wide-tracked):** `SONDERENCE` · `[NEEDS INPUT: email, location, any social/links]`
+
+---
+
+## Open items / decisions for Elly
+
+- `[NEEDS INPUT]` Booking link for the book-a-call CTA.
+- Arc confirmed: `Analysis → Diagnosis → Hypothesis → Methodology → Impact → Iteration`.
+  (Swap "Hypothesis" → "Analysis"? No — "Analysis" is now the opening stage; keep "Hypothesis" here,
+  or rename to "Evidence" if "Hypothesis" reads too tentative to your audience.)
+- Confirm/choose the headline variants marked *(alt: ...)* above.
+- `[NEEDS INPUT]` Body copy for sections 01, 02, 03, 04, 06, 07, 08 (marked inline).
+- `[NEEDS INPUT]` Optional one-liners per service offering.
+- **Research display (§03) + stats/testimonials (§06):** these wait for REAL data from the future
+  research-compiling skill. Until then the slots stay hidden — no fabricated findings or metrics.
+- Decide Impact-section ground: navy (high contrast) vs. `#F7F7F9` (quieter).
+- Nav has 6 stage/section labels + CTA — trim to 4–5 if it feels crowded on mobile.

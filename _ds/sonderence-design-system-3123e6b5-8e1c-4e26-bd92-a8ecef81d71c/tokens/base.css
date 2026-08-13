@@ -1,0 +1,41 @@
+/* Minimal element defaults so any page linking styles.css inherits the brand
+   voice without needing a component. Kept deliberately small. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--surface-page);
+  color:var(--text-primary);
+  font-family:var(--font-body);
+  font-size:var(--type-body-size);
+  line-height:var(--type-body-leading);
+  font-weight:var(--weight-regular);
+  letter-spacing:var(--tracking-snug);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-heading);
+  color:var(--text-primary);
+  font-weight:var(--weight-semibold);
+  margin:0;
+  text-wrap:balance;
+}
+h1{font-size:var(--type-h1-size);line-height:var(--type-h1-leading);letter-spacing:var(--type-h1-tracking)}
+h2{font-size:var(--type-h2-size);line-height:var(--type-h2-leading);letter-spacing:var(--type-h2-tracking)}
+h3{font-size:var(--type-h3-size);line-height:var(--type-h3-leading);letter-spacing:var(--type-h3-tracking)}
+h4{font-size:var(--type-h4-size);line-height:var(--type-h4-leading);letter-spacing:var(--type-h4-tracking)}
+h5{font-size:var(--type-h5-size);line-height:var(--type-h5-leading);letter-spacing:var(--type-h5-tracking)}
+p{margin:0;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:none;border-bottom:1px solid var(--border-default);transition:var(--transition-control)}
+a:hover{color:var(--text-link-hover);border-bottom-color:var(--border-strong)}
+a:focus-visible{outline:none;box-shadow:var(--focus-ring);border-radius:var(--radius-xs)}
+code,kbd,samp,pre{font-family:var(--font-mono);font-size:.92em}
+hr{border:none;border-top:var(--stroke-hairline) solid var(--border-subtle);margin:var(--space-9) 0}
+::selection{background:var(--navy-800);color:var(--white)}
+small{font-size:var(--type-small-size)}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+@keyframes sonderence-spin{to{transform:rotate(360deg)}}
+@keyframes sonderence-fade-up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes sonderence-fade{from{opacity:0}to{opacity:1}}

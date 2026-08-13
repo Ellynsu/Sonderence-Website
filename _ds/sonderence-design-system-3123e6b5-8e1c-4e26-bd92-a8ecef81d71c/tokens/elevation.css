@@ -1,0 +1,19 @@
+/* Elevation. Shadows are navy-tinted, low-opacity and wide — closer to
+   paper lift than to material drop-shadow. Never use more than two levels
+   on one screen. */
+:root{
+  --shadow-none:none;
+  --shadow-xs:0 1px 2px rgba(19,23,71,.05);
+  --shadow-sm:0 1px 2px rgba(19,23,71,.05), 0 2px 6px rgba(19,23,71,.05);
+  --shadow-md:0 2px 4px rgba(19,23,71,.04), 0 8px 20px rgba(19,23,71,.07);
+  --shadow-lg:0 4px 8px rgba(19,23,71,.05), 0 20px 44px rgba(19,23,71,.10);
+  --shadow-xl:0 8px 16px rgba(19,23,71,.06), 0 32px 80px rgba(19,23,71,.16);
+  --shadow-hairline:inset 0 0 0 1px rgba(19,23,71,.08);
+  --shadow-inset-press:inset 0 1px 2px rgba(8,10,28,.18);
+
+  --focus-ring:0 0 0 2px var(--surface-page), 0 0 0 4px var(--focus-ring-color);
+  --focus-ring-inverse:0 0 0 2px var(--navy-900), 0 0 0 4px var(--focus-ring-color-inverse);
+
+  --blur-scrim:8px;
+  --blur-chrome:14px;
+}

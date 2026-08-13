@@ -1,0 +1,20 @@
+/* Spacing. 4px rhythm below 24px, 8px rhythm above. */
+:root{
+  --space-0:0px;   --space-1:2px;   --space-2:4px;   --space-3:6px;
+  --space-4:8px;   --space-5:12px;  --space-6:16px;  --space-7:20px;
+  --space-8:24px;  --space-9:32px;  --space-10:40px; --space-11:48px;
+  --space-12:64px; --space-13:80px; --space-14:96px; --space-15:128px; --space-16:160px;
+
+  /* Semantic */
+  --space-inline-xs:var(--space-2);
+  --space-inline-sm:var(--space-3);
+  --space-inline-md:var(--space-4);
+  --space-stack-xs:var(--space-2);
+  --space-stack-sm:var(--space-4);
+  --space-stack-md:var(--space-6);
+  --space-stack-lg:var(--space-8);
+  --space-card-padding:var(--space-8);
+  --space-card-padding-sm:var(--space-6);
+  --space-section-y:var(--space-14);
+  --space-section-y-lg:var(--space-15);
+}

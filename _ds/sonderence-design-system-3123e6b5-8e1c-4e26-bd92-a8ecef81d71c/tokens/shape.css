@@ -1,0 +1,16 @@
+/* Radii and stroke weights. The brand is precise and structured:
+   radii stay small; nothing is pill-shaped except status dots and avatars. */
+:root{
+  --radius-none:0px; --radius-xs:2px; --radius-sm:3px; --radius-md:4px;
+  --radius-lg:6px;   --radius-xl:10px; --radius-2xl:16px; --radius-full:999px;
+
+  --radius-control:var(--radius-md);
+  --radius-card:var(--radius-lg);
+  --radius-surface:var(--radius-xl);
+  --radius-tag:var(--radius-xs);
+
+  --stroke-hairline:1px;
+  --stroke-default:1px;
+  --stroke-emphasis:1.5px;
+  --stroke-icon:1.5px;
+}

@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Sonderence — Digital transformation consulting and implementation</title>
+<meta name="description" content="Sonderence designs and builds the digital operating system a growing business runs on — strategy, systems design and implementation in one embedded engagement.">
+<meta property="og:title" content="Sonderence — Digital transformation consulting and implementation">
+<meta property="og:description" content="We design and build the digital operating system a growing business runs on — people, process, data and technology in one system.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/favicon-192.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/colors.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/typography.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/shape.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/motion.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/layout.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/tokens/base.css">
+<link rel="stylesheet" href="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/sonderence-design-system-3123e6b5-8e1c-4e26-bd92-a8ecef81d71c/_ds_bundle.js"></script>
+<style>
+  /* Brand & Style Guide v0.1 overrides — one hue, four measures; Onest; radius 0; no shadows. */
+  :root {
+    --font-display: "Onest", system-ui, sans-serif;
+    --font-body: "Onest", system-ui, sans-serif;
+    --font-label: "IBM Plex Mono", ui-monospace, monospace;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    --font-serif: "Onest", system-ui, sans-serif;
+
+    --navy-50: #F7F7F9;  --navy-100: #ECECF1; --navy-200: #DBDBE2; --navy-300: #B9B9C8;
+    --navy-400: #9A9AB0; --navy-500: #7C7C96; --navy-600: #3A3A6B; --navy-700: #1B1B55;
+    --navy-800: #101040; --navy-900: #0B0B2E; --navy-950: #07071F;
+
+    --text-primary: #101040; --text-secondary: #7C7C96; --text-tertiary: #7C7C96;
+    --text-disabled: #B9B9C8; --text-brand: #101040; --text-link: #101040; --text-link-hover: #7C7C96;
+    --text-inverse: #FFFFFF; --text-inverse-secondary: rgba(255,255,255,.72); --text-inverse-tertiary: rgba(255,255,255,.50);
+
+    --surface-page: #FFFFFF; --surface-card: #FFFFFF; --surface-raised: #FFFFFF;
+    --surface-sunken: #F7F7F9; --surface-muted: #F7F7F9;
+    --surface-inverse: #101040; --surface-inverse-deep: #0B0B2E;
+    --surface-hover: rgba(16,16,64,.04); --surface-active: rgba(16,16,64,.07);
+
+    --border-hairline: #DBDBE2; --border-subtle: #DBDBE2; --border-default: #DBDBE2;
+    --border-strong: #7C7C96; --border-brand: #101040;
+    --border-inverse: rgba(255,255,255,.18); --border-inverse-strong: rgba(255,255,255,.34);
+
+    --action-primary: #101040; --action-primary-hover: #1B1B55; --action-primary-active: #0B0B2E;
+
+    --radius-xs: 0px; --radius-sm: 0px; --radius-md: 0px; --radius-lg: 0px; --radius-xl: 0px;
+    --radius-control: 0px; --radius-card: 0px; --radius-badge: 0px; --radius-tag: 0px;
+    --radius-dialog: 0px; --radius-tooltip: 0px; --radius-meter: 0px;
+    --shadow-xs: none; --shadow-sm: none; --shadow-md: none; --shadow-lg: none; --shadow-xl: none;
+    --shadow-inset-press: none;
+  }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FFFFFF; color: #101040; font-family: "Onest", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #101040; text-decoration: none; border-bottom: 0; }
+  header nav a, footer a { border-bottom: 0; }
+  a:hover { color: #7C7C96; }
+  ::selection { background: #DBDBE2; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* ── Breakpoints ─────────────────────────────────────────────
+     1180 laptop · 1000 small laptop · 900 tablet · 620 phone     */
+  [data-r="burger"] { display: none; }
+  [data-r="mobilemenu"] { display: none; }
+
+  @media (max-width: 1180px) {
+    main > section > div, header > div:first-child, footer > div { padding-left: 24px !important; padding-right: 24px !important; }
+    [data-r="split"] { gap: 48px !important; }
+    #top h1 { font-size: 60px !important; }
+    #contact h2 { font-size: 46px !important; }
+    main > section > div { padding-top: 96px !important; padding-bottom: 96px !important; }
+    #top > div:last-child { padding-top: 128px !important; padding-bottom: 104px !important; }
+  }
+
+  @media (max-width: 1000px) {
+    [data-r="orbit"] { transform: translateY(-50%) scale(.66) !important; right: -400px !important; }
+    [data-r="row"], [data-r="rowhead"] { grid-template-columns: 44px minmax(0, 1fr) 170px !important; gap: 24px !important; }
+    [data-r="row"] > *:nth-child(3) { grid-column: 2 / 3; }
+    [data-r="rowhead"] > *:nth-child(3) { display: none !important; }
+    [data-r="rowhead"] > *:nth-child(4) { grid-column: 3 / 4; grid-row: 1; }
+    [data-meth-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    [data-r="ctabox"] { padding: 64px 40px !important; }
+  }
+
+  @media (max-width: 900px) {
+    header nav, header [data-chapter-label] { display: none !important; }
+    [data-r="burger"] { display: inline-flex !important; }
+    [data-r="mobilemenu"] { display: block; }
+    [data-r="split"], [data-r="band"], [data-r="ctabox"], [data-r="figsplit"], [data-r="three"] { grid-template-columns: minmax(0, 1fr) !important; }
+    [data-r="split"], [data-r="band"], [data-r="ctabox"] { gap: 32px !important; align-items: start !important; }
+    [data-pubsec] { gap: 56px !important; }
+    [data-pubsec] > div:first-child > div:last-child { margin-top: 32px !important; gap: 28px !important; }
+    [data-r="ctabox"] > div:last-child { justify-content: flex-start !important; padding-bottom: 0 !important; }
+    [data-r="figsplit"] > div:nth-child(2) { min-height: 56px; border-left: 0 !important; border-right: 0 !important; border-top: 1px solid #DBDBE2 !important; border-bottom: 1px solid #DBDBE2 !important; }
+    [data-r="figsplit"] > div:nth-child(2) > span { transform: rotate(90deg); }
+    [data-r="band"] > div:last-child { justify-content: flex-start !important; }
+    [data-r="rowhead"] { display: none !important; }
+    [data-r="row"] { grid-template-columns: 34px minmax(0, 1fr) !important; column-gap: 14px !important; row-gap: 14px !important; padding: 26px 0 !important; align-items: start !important; }
+    [data-r="row"] > *:nth-child(1) { padding-top: 4px !important; }
+    [data-r="row"] > *:nth-child(2), [data-r="row"] > *:nth-child(3), [data-r="row"] > *:nth-child(4) { grid-column: 2 / -1 !important; }
+    [data-r="row"] > *:nth-child(3) { padding-top: 0 !important; }
+    [data-r="row"] > *:nth-child(4) { text-align: left !important; padding-top: 14px !important; border-top: 1px solid #DBDBE2; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
+    footer [data-r="three"] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+    main > section > div { padding-top: 72px !important; padding-bottom: 72px !important; }
+    #top > div:last-child { padding-top: 96px !important; padding-bottom: 80px !important; }
+    #top h1 { font-size: 46px !important; }
+    main h2 { font-size: 34px !important; }
+    #contact h2 { font-size: 36px !important; }
+    [data-r="orbit"] { transform: translateY(-50%) scale(.72) !important; right: -520px !important; opacity: .8; }
+    footer [data-r="split"] { gap: 40px !important; }
+  }
+
+  @media (max-width: 620px) {
+    main > section > div, header > div:first-child, footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+    main > section > div { padding-top: 56px !important; padding-bottom: 56px !important; }
+    #top > div:last-child { padding-top: 72px !important; padding-bottom: 64px !important; }
+    #top h1 { font-size: 34px !important; line-height: 1.1 !important; }
+    main h2, #contact h2 { font-size: 27px !important; }
+    main h3 { font-size: 19px !important; }
+    main p, #top p { font-size: 16px !important; }
+    [data-r="orbit"] { display: none !important; }
+    [data-r="two"], [data-r="four"], [data-meth-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    [data-r="two"] > div, [data-meth-grid] > div { padding: 24px 18px !important; }
+    [data-r="four"] > div:last-child { grid-column: span 2 !important; }
+    [data-grid-scan] { grid-template-columns: repeat(3, 1fr) !important; grid-auto-rows: 62px !important; }
+    [data-grid-scan] > div:nth-child(n+13) { display: none !important; }
+    [data-r="row"] { grid-template-columns: 26px minmax(0, 1fr) !important; column-gap: 12px !important; row-gap: 12px !important; padding: 22px 0 !important; }
+    [data-r="row"] > *:nth-child(4) { flex-direction: column; align-items: flex-start; gap: 12px; }
+    [data-r="ctabox"] { padding: 40px 24px !important; }
+    [data-r="three"] > div { padding: 24px 0 !important; }
+    footer [data-r="three"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px !important; }
+    footer [data-r="three"] > div { padding: 0 !important; }
+    #v2-sticky > div > div:first-child > span:nth-child(n+2) { display: none !important; }
+    #v2-sticky > div { padding: 10px 20px !important; }
+    #iteration figure { padding: 40px 20px !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: #FFFFFF; min-height: 100vh; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #DBDBE2;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; gap: 44px;">
+      <a href="#top" aria-label="Sonderence — home" style="display: flex; align-items: center;">
+        <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Logo" size="24" hint-size="150px,24px"></x-import>
+      </a>
+      <nav style="display: flex; align-items: center; gap: 32px;">
+        <div style="position: relative;">
+          <button type="button" onClick="{{ toggleProcess }}" style="display: flex; align-items: center; gap: 8px; background: none; border: 0; padding: 0; cursor: pointer; font-family: Onest, system-ui, sans-serif; font-size: 14px; font-weight: 500; color: #101040;">
+            <span>Our Process</span>
+            <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C7C96;">↓</span>
+          </button>
+          <sc-if value="{{ processOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 34px; left: -20px; width: 260px; background: #FFFFFF; border: 1px solid #DBDBE2; padding: 8px 0;">
+              <a href="#analysis" onClick="{{ closeProcess }}" style="display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 20px; font-size: 14px; color: #101040;" style-hover="background: #F7F7F9;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">01</span><span>Analysis</span></a>
+              <a href="#diagnosis" onClick="{{ closeProcess }}" style="display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 20px; font-size: 14px; color: #101040;" style-hover="background: #F7F7F9;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">02</span><span>Diagnosis</span></a>
+              <a href="#hypothesis" onClick="{{ closeProcess }}" style="display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 20px; font-size: 14px; color: #101040;" style-hover="background: #F7F7F9;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">03</span><span>Hypothesis</span></a>
+              <a href="#methodology" onClick="{{ closeProcess }}" style="display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 20px; font-size: 14px; color: #101040;" style-hover="background: #F7F7F9;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">04</span><span>Methodology</span></a>
+              <a href="#impact" onClick="{{ closeProcess }}" style="display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 20px; font-size: 14px; color: #101040;" style-hover="background: #F7F7F9;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">05</span><span>Transformation</span></a>
+              <a href="#iteration" onClick="{{ closeProcess }}" style="display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 20px; font-size: 14px; color: #101040;" style-hover="background: #F7F7F9;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">06</span><span>Iteration</span></a>
+            </div>
+          </sc-if>
+        </div>
+        <a href="#standing" style="font-size: 14px; font-weight: 500; color: #101040;" style-hover="color: #7C7C96;">Clients</a>
+        <a href="#services" style="font-size: 14px; font-weight: 500; color: #101040;" style-hover="color: #7C7C96;">Services</a>
+        <a href="#about" style="font-size: 14px; font-weight: 500; color: #101040;" style-hover="color: #7C7C96;">About</a>
+      </nav>
+      <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 20px;">
+        <span data-chapter-label="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96; white-space: nowrap;">{{ chapterLabel }}</span>
+        <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" size="sm" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="border-radius: 999px; padding: 0 20px;" hint-size="auto,36px">Book a call</x-import>
+        <button type="button" data-r="burger" onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; padding: 0; cursor: pointer;">
+          <span aria-hidden="true" style="display: flex; flex-direction: column; gap: 5px; width: 20px;">
+            <span style="display: block; height: 1px; background: #101040;"></span>
+            <span style="display: block; height: 1px; background: #101040;"></span>
+            <span style="display: block; height: 1px; background: #101040;"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div data-r="mobilemenu" style="border-top: 1px solid #DBDBE2; background: #FFFFFF; max-height: calc(100vh - 72px); overflow-y: auto;">
+        <div style="padding: 12px 20px 24px; display: flex; flex-direction: column;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96; padding: 12px 0 4px;">Our process</div>
+          <a href="#analysis" onClick="{{ closeMenu }}" style="display: grid; grid-template-columns: 34px 1fr; align-items: center; min-height: 44px; font-size: 16px; color: #101040;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C7C96;">01</span><span>Analysis</span></a>
+          <a href="#diagnosis" onClick="{{ closeMenu }}" style="display: grid; grid-template-columns: 34px 1fr; align-items: center; min-height: 44px; font-size: 16px; color: #101040;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C7C96;">02</span><span>Diagnosis</span></a>
+          <a href="#hypothesis" onClick="{{ closeMenu }}" style="display: grid; grid-template-columns: 34px 1fr; align-items: center; min-height: 44px; font-size: 16px; color: #101040;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C7C96;">03</span><span>Hypothesis</span></a>
+          <a href="#methodology" onClick="{{ closeMenu }}" style="display: grid; grid-template-columns: 34px 1fr; align-items: center; min-height: 44px; font-size: 16px; color: #101040;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C7C96;">04</span><span>Methodology</span></a>
+          <a href="#impact" onClick="{{ closeMenu }}" style="display: grid; grid-template-columns: 34px 1fr; align-items: center; min-height: 44px; font-size: 16px; color: #101040;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C7C96;">05</span><span>Transformation</span></a>
+          <a href="#iteration" onClick="{{ closeMenu }}" style="display: grid; grid-template-columns: 34px 1fr; align-items: center; min-height: 44px; font-size: 16px; color: #101040;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C7C96;">06</span><span>Iteration</span></a>
+          <div style="height: 1px; background: #DBDBE2; margin: 12px 0;"></div>
+          <a href="#standing" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 500; color: #101040;">Clients</a>
+          <a href="#services" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 500; color: #101040;">Services</a>
+          <a href="#about" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 500; color: #101040;">About</a>
+          <a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" onClick="{{ closeMenu }}" style="display: flex; align-items: center; justify-content: space-between; min-height: 48px; margin-top: 12px; padding: 0 20px; background: #101040; color: #FFFFFF; font-size: 15px; font-weight: 500;" style-hover="background: #1B1B55; color: #FFFFFF;"><span>Book a call</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
+        </div>
+      </div>
+    </sc-if>
+    <div id="v2-progress" style="position: absolute; left: 0; bottom: -1px; height: 2px; width: 0%; background: #101040;"></div>
+  </header>
+
+  <main>
+
+    <section id="top" data-chapter="" data-screen-label="Hero" style="position: relative; background: #101040; overflow: hidden;">
+      <div aria-hidden="true" data-r="orbit" style="position: absolute; top: 50%; right: -280px; width: 900px; height: 900px; transform: translateY(-50%); pointer-events: none;">
+        <div style="position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.09); border-radius: 50%;"></div>
+        <div style="position: absolute; inset: 110px; border: 1px solid rgba(255,255,255,.09); border-radius: 50%;"></div>
+        <div style="position: absolute; inset: 220px; border: 1px solid rgba(255,255,255,.09); border-radius: 50%;"></div>
+        <div style="position: absolute; inset: 330px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%;"></div>
+        <div data-orbit="" data-period="42" data-dir="1" style="position: absolute; inset: 110px; border-radius: 50%; will-change: transform;">
+          <div style="position: absolute; left: -3.5px; top: 50%; width: 7px; height: 7px; margin-top: -3.5px; border-radius: 50%; background: #FFFFFF;"></div>
+        </div>
+
+        <div data-orbit="" data-period="30" data-dir="1" style="position: absolute; inset: 0px; border-radius: 50%; will-change: transform;">
+          <div style="position: absolute; left: 50%; top: -4px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: rgba(255,255,255,.88);"></div>
+          <div data-link="" data-period="15" style="position: absolute; left: 50%; top: 0; width: 0; height: 50%; border-left: 1px dashed rgba(255,255,255,.22); opacity: 0;"></div>
+          <div data-node="" data-period="9" style="position: absolute; left: 50%; bottom: -3px; margin-left: -3px; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.45);"></div>
+        </div>
+
+        <div data-orbit="" data-period="24" data-dir="-1" style="position: absolute; inset: 110px; border-radius: 50%; will-change: transform;">
+          <div style="position: absolute; left: 50%; top: -4px; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: rgba(255,255,255,.88);"></div>
+          <div data-link="" data-period="12" style="position: absolute; left: 50%; top: 0; width: 0; height: 50%; border-left: 1px dashed rgba(255,255,255,.22); opacity: 0;"></div>
+          <div data-node="" data-period="11" style="position: absolute; left: -3px; top: 50%; margin-top: -3px; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.45);"></div>
+        </div>
+
+        <div data-orbit="" data-period="18" data-dir="1" style="position: absolute; inset: 220px; border-radius: 50%; will-change: transform;">
+          <div style="position: absolute; left: 50%; top: -4px; width: 7px; height: 7px; margin-left: -3.5px; border-radius: 50%; background: rgba(255,255,255,.88);"></div>
+          <div data-link="" data-period="9" style="position: absolute; left: 50%; top: 0; width: 0; height: 50%; border-left: 1px dashed rgba(255,255,255,.22); opacity: 0;"></div>
+          <div data-node="" data-period="8" style="position: absolute; right: -3px; top: 50%; margin-top: -3px; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.45);"></div>
+        </div>
+
+        <div data-orbit="" data-period="13" data-dir="-1" style="position: absolute; inset: 330px; border-radius: 50%; will-change: transform;">
+          <div style="position: absolute; left: 50%; top: -4px; width: 7px; height: 7px; margin-left: -3.5px; border-radius: 50%; background: rgba(255,255,255,.88);"></div>
+          <div data-link="" data-period="6.5" style="position: absolute; left: 50%; top: 0; width: 0; height: 50%; border-left: 1px dashed rgba(255,255,255,.22); opacity: 0;"></div>
+        </div>
+      </div>
+      <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 152px 32px 128px;">
+        <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.72);">Sonderence</div>
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 80px; align-items: end; margin-top: 40px;">
+          
+          <h1 style="margin: 0; font-family: Onest, system-ui, sans-serif; font-size: 76px; line-height: 1.04; letter-spacing: -0.03em; font-weight: 600; color: #FFFFFF; text-wrap: balance;">Digital partners that understands your business.</h1><div style="padding-bottom: 8px;">
+            <p style="margin: 0; font-size: 18px; line-height: 1.65; color: rgba(255,255,255,.72); text-wrap: pretty;">Sonderence designs digital ecosystems around the way a business actually works — as an embedded partner, not an outside vendor.</p>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 28px;">
+              <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" variant="inverse" size="lg" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" hint-size="auto,48px">Book your Foundation assessment</x-import>
+              <a href="#services" style="display: inline-flex; align-items: center; gap: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.34); font-size: 15px; font-weight: 500; color: #FFFFFF;" style-hover="border-bottom-color: #FFFFFF; color: #FFFFFF;">
+                <span>See the working set</span>
+                <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span>
+              </a>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: rgba(255,255,255,.62);">
+              <span>ZERO COST</span>
+              <span aria-hidden="true" style="width: 14px; height: 1px; background: rgba(255,255,255,.34);"></span>
+              <span>45 minutes</span>
+              <span aria-hidden="true" style="width: 14px; height: 1px; background: rgba(255,255,255,.34);"></span>
+              <span>No obligation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis" data-chapter="01 / Analysis" data-screen-label="01 Analysis" style="background: #FFFFFF;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">01 / Analysis</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">We map what's there.</h2>
+          </div>
+          <p style="margin: 0; padding-top: 6px; font-size: 18px; line-height: 1.7; color: #7C7C96; max-width: 640px; text-wrap: pretty;">Before proposing solutions, we study how the business actually operates. We examine workflows, systems, data, decisions, and the people behind them to understand the current operating reality before forming conclusions.</p>
+        </div>
+
+        <figure data-reveal="" style="margin: 72px 0 0;">
+          <div data-grid-scan="" style="display: grid; grid-template-columns: repeat(8, 1fr); grid-auto-rows: 56px; gap: 1px; background: #DBDBE2; border: 1px solid #DBDBE2;">
+            <div data-cell="0" style="background: #FFFFFF;"></div>
+            <div data-cell="1" style="background: #FFFFFF;"></div>
+            <div data-cell="2" style="background: #FFFFFF;"></div>
+            <div data-cell="3" style="background: #FFFFFF;"></div>
+            <div data-cell="4" style="background: #FFFFFF;"></div>
+            <div data-cell="5" style="background: #FFFFFF;"></div>
+            <div data-cell="6" style="background: #FFFFFF;"></div>
+            <div data-cell="7" style="background: #FFFFFF;"></div>
+            <div data-cell="8" style="background: #FFFFFF;"></div>
+            <div data-cell="9" style="background: #FFFFFF;"></div>
+            <div data-cell="10" style="background: #FFFFFF;"></div>
+            <div data-cell="11" style="background: #FFFFFF;"></div>
+            <div data-cell="12" style="background: #FFFFFF;"></div>
+            <div data-cell="13" style="background: #FFFFFF;"></div>
+            <div data-cell="14" style="background: #FFFFFF;"></div>
+            <div data-cell="15" style="background: #FFFFFF;"></div>
+            <div data-cell="16" style="background: #FFFFFF;"></div>
+            <div data-cell="17" style="background: #FFFFFF;"></div>
+            <div data-cell="18" style="background: #FFFFFF;"></div>
+            <div data-cell="19" style="background: #FFFFFF;"></div>
+            <div data-cell="20" style="background: #FFFFFF;"></div>
+            <div data-cell="21" style="background: #FFFFFF;"></div>
+            <div data-cell="22" style="background: #FFFFFF;"></div>
+            <div data-cell="23" style="background: #FFFFFF;"></div>
+          </div>
+          <figcaption style="margin-top: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Modular grid — the operating reality, recorded before it is judged</figcaption>
+        </figure>
+
+        <div data-reveal="" style="margin-top: 56px; padding-top: 28px; border-top: 1px solid #DBDBE2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #101040; max-width: 560px;">The map of your operation is the first deliverable. It takes one conversation to start.</p>
+          <a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 10px; padding-bottom: 4px; border-bottom: 1px solid #101040; font-size: 15px; font-weight: 500; color: #101040; white-space: nowrap;" style-hover="color: #7C7C96; border-bottom-color: #7C7C96;"><span>Book a discovery call</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="diagnosis" data-chapter="02 / Diagnosis" data-screen-label="02 Diagnosis" style="background: #F7F7F9; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">02 / Diagnosis</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">Tools multiply. Value doesn't.</h2>
+          </div>
+          <div style="max-width: 640px;">
+            <p style="margin: 0; padding-top: 6px; font-size: 18px; line-height: 1.7; color: #101040; text-wrap: pretty;">Processes should work for the business, within the business — not the other way around.</p>
+            <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.7; color: #7C7C96; text-wrap: pretty;">Most organizations don't suffer from a lack of technology. They suffer from fragmented systems, disconnected processes, and operations that have outgrown the way they work. We identify the underlying constraint so every recommendation addresses the cause rather than the symptoms.</p>
+          </div>
+        </div>
+
+        <figure data-reveal="" data-r="figsplit" style="margin: 72px 0 0; display: grid; grid-template-columns: minmax(0, 1fr) 88px minmax(0, 1fr); gap: 0; align-items: stretch; border: 1px solid #DBDBE2; background: #FFFFFF;">
+          <div style="position: relative; height: 280px; padding: 24px; overflow: hidden;">
+            <div style="position: relative; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Fragmented</div>
+            <div aria-hidden="true" data-net="" style="position: absolute; inset: 0; transform-origin: 50% 52%; will-change: transform;">
+              <div aria-hidden="true" data-frag-link="0" data-from="0" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="1" data-from="1" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="2" data-from="2" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="3" data-from="3" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="4" data-from="4" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="5" data-from="5" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="6" data-from="6" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="7" data-from="7" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="8" data-from="8" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="9" data-from="9" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="10" data-from="10" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="11" data-from="11" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="12" data-from="12" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="13" data-from="13" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="14" data-from="14" data-to="-1" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="15" data-from="8" data-to="9" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="16" data-from="10" data-to="11" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="17" data-from="3" data-to="4" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-frag-link="18" data-from="12" data-to="13" style="position: absolute; left: 0; top: 0; width: 0; height: 1px; background-image: repeating-linear-gradient(90deg, #9A9AAE 0 4px, rgba(154,154,174,0) 4px 11px); background-size: 11px 1px; transform-origin: left center; opacity: .5;"></div>
+              <div aria-hidden="true" data-silo="0" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: -49.00px 0 0 -3.00px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="1" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: 20.00px 0 0 36.84px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="2" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: 20.00px 0 0 -42.84px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="3" style="position: absolute; left: 50%; top: 52%; width: 7px; height: 7px; margin: -83.85px 0 0 32.38px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="4" style="position: absolute; left: 50%; top: 52%; width: 7px; height: 7px; margin: 5.80px 0 0 84.01px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="5" style="position: absolute; left: 50%; top: 52%; width: 7px; height: 7px; margin: 82.60px 0 0 14.70px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="6" style="position: absolute; left: 50%; top: 52%; width: 7px; height: 7px; margin: 40.41px 0 0 -79.76px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="7" style="position: absolute; left: 50%; top: 52%; width: 7px; height: 7px; margin: -62.46px 0 0 -68.83px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="8" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: -87.10px 0 0 90.83px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="9" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: 17.92px 0 0 121.25px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="10" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: 107.19px 0 0 58.11px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="11" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: 113.48px 0 0 -51.04px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="12" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: 32.06px 0 0 -124.02px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="13" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: -75.76px 0 0 -105.87px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" data-silo="14" style="position: absolute; left: 50%; top: 52%; width: 6px; height: 6px; margin: -128.79px 0 0 -10.25px; border-radius: 50%; background: #5A5A75;"></div>
+              <div aria-hidden="true" style="position: absolute; left: 50%; top: 52%; width: 176px; height: 176px; margin: -88px 0 0 -88px; border: 1px solid rgba(219,219,226,.7); border-radius: 50%;"></div>
+              <div aria-hidden="true" data-hub-ring="" style="position: absolute; left: 50%; top: 52%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border: 1px solid #DBDBE2; border-radius: 50%;"></div>
+              <div aria-hidden="true" data-hub="" style="position: absolute; left: 50%; top: 52%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%; background: #101040;"></div>
+            </div>
+          </div>
+          <div style="position: relative; border-left: 1px solid #DBDBE2; border-right: 1px solid #DBDBE2; background: #F7F7F9; display: flex; align-items: center; justify-content: center;">
+            <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #101040;">→</span>
+          </div>
+          <div style="position: relative; height: 280px; padding: 24px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Resolved</div>
+            <div aria-hidden="true" style="position: absolute; left: 44px; top: 140px; right: 44px; height: 0; border-top: 1px solid #101040;"></div>
+            <div aria-hidden="true" data-res-travel="" style="position: absolute; left: 44px; top: 136px; width: 9px; height: 9px; border-radius: 50%; background: #101040; opacity: 0;"></div>
+            <div aria-hidden="true" data-res-travel="1" style="position: absolute; left: 44px; top: 136px; width: 9px; height: 9px; border-radius: 50%; background: #101040; opacity: 0;"></div>
+            <div aria-hidden="true" data-res-travel="2" style="position: absolute; left: 44px; top: 136px; width: 9px; height: 9px; border-radius: 50%; background: #101040; opacity: 0;"></div>
+            <div aria-hidden="true" data-res-node="0" style="position: absolute; left: 40px; top: 136px; width: 9px; height: 9px; border-radius: 50%; background: #101040;"></div>
+            <div aria-hidden="true" data-res-node="1" style="position: absolute; left: 33.33%; top: 136px; width: 9px; height: 9px; border-radius: 50%; background: #101040;"></div>
+            <div aria-hidden="true" data-res-node="2" style="position: absolute; left: 66.66%; top: 136px; width: 9px; height: 9px; border-radius: 50%; background: #101040;"></div>
+            <div aria-hidden="true" data-res-node="3" style="position: absolute; right: 40px; top: 136px; width: 9px; height: 9px; border-radius: 50%; background: #101040;"></div>
+            <div aria-hidden="true" style="position: absolute; left: 33.33%; top: 145px; width: 0; height: 44px; border-left: 1px dashed #DBDBE2;"></div>
+            <div aria-hidden="true" style="position: absolute; left: 66.66%; top: 87px; width: 0; height: 44px; border-left: 1px dashed #DBDBE2;"></div>
+          </div>
+        </figure>
+        <figcaption style="margin-top: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Network signal — the constraint, before and after it is named</figcaption>
+
+        <div data-reveal="" style="margin-top: 56px; padding-top: 28px; border-top: 1px solid #DBDBE2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #101040; max-width: 560px;">We name your constraint in the free Foundation assessment — before any engagement is proposed.</p>
+          <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" hint-size="auto,40px">Book a discovery call</x-import>
+        </div>
+      </div>
+    </section>
+
+    <section id="hypothesis" data-chapter="03 / Hypothesis" data-screen-label="03 Hypothesis" style="background: #FFFFFF; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 80px; align-items: center;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">03 / Hypothesis</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">Evidence before action.</h2>
+            <p style="margin: 24px 0 0; max-width: 640px; font-size: 18px; line-height: 1.7; color: #7C7C96; text-wrap: pretty;">Every recommendation begins as a hypothesis grounded in evidence, not assumption. By combining research, operational data, and first-principles reasoning, we develop a testable understanding of what is most likely to create meaningful improvement before implementation begins.</p>
+          </div>
+          <figure style="margin: 0; position: relative; height: 400px; background: #F7F7F9; border: 1px solid #DBDBE2; overflow: hidden;">
+            <div aria-hidden="true" data-hyp-ring="a" style="position: absolute; left: 42%; top: 45%; width: 300px; height: 300px; margin: -150px 0 0 -150px; will-change: transform;">
+              <div style="position: absolute; inset: 0; border: 1px solid #101040; border-left-color: rgba(16,16,64,.16); border-top-color: rgba(16,16,64,.5); border-radius: 50%;"></div>
+            </div>
+            <div aria-hidden="true" data-hyp-ring="b" style="position: absolute; left: 58%; top: 45%; width: 300px; height: 300px; margin: -150px 0 0 -150px; will-change: transform;">
+              <div style="position: absolute; inset: 0; border: 1px solid #7C7C96; border-right-color: rgba(124,124,150,.16); border-bottom-color: rgba(124,124,150,.5); border-radius: 50%;"></div>
+            </div>
+            <div aria-hidden="true" data-hyp-inner="" style="position: absolute; left: 50%; top: 45%; width: 196px; height: 196px; margin: -98px 0 0 -98px; border: 1px dashed #DBDBE2; border-radius: 50%; will-change: transform;"></div>
+            <div aria-hidden="true" style="position: absolute; left: 50%; top: 45%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%; background: #101040;"></div>
+            <figcaption style="position: absolute; left: 20px; bottom: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Interlock — where the evidence agrees</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="methodology" data-chapter="04 / Methodology" data-screen-label="04 Methodology" style="background: #F7F7F9; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">04 / Methodology</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">We begin with the business.</h2>
+          </div>
+          <p style="margin: 0; padding-top: 6px; font-size: 18px; line-height: 1.7; color: #7C7C96; max-width: 640px; text-wrap: pretty;">Our methodology combines systems thinking, ontological analysis, and close collaboration to redesign how the business operates. Technology becomes an instrument of the operating model, not its foundation — so every implementation serves a measurable business objective.</p>
+        </div>
+
+        <div data-reveal="" data-meth-grid="" style="position: relative; margin-top: 72px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: #DBDBE2; border: 1px solid #DBDBE2;">
+          <div style="background: #FFFFFF; padding: 28px 24px 32px;">
+            <div aria-hidden="true" data-meth-rail="" style="position: relative; height: 26px; margin-bottom: 22px;">
+              <div style="position: absolute; left: 0; width: 46%; top: 4px; height: 1px; background: #DBDBE2;"></div>
+              <div style="position: absolute; left: 0; width: 66%; top: 12px; height: 1px; background: #DBDBE2;"></div>
+              <div data-meth-bar="" style="position: absolute; left: 0; right: 0; top: 20px; height: 1px; background: #101040; transform-origin: left center; transform: scaleX(0);"></div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">01</div>
+            <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.6; color: #7C7C96;">Many firms begin with technology.</p>
+            <p style="margin: 8px 0 0; font-size: 19px; line-height: 1.4; letter-spacing: -0.015em; font-weight: 600; color: #101040;">Sonderence begins with the business.</p>
+          </div>
+          <div style="background: #FFFFFF; padding: 28px 24px 32px;">
+            <div aria-hidden="true" data-meth-rail="" style="position: relative; height: 26px; margin-bottom: 22px;">
+              <div style="position: absolute; left: 0; width: 46%; top: 4px; height: 1px; background: #DBDBE2;"></div>
+              <div style="position: absolute; left: 0; width: 66%; top: 12px; height: 1px; background: #DBDBE2;"></div>
+              <div data-meth-bar="" style="position: absolute; left: 0; right: 0; top: 20px; height: 1px; background: #101040; transform-origin: left center; transform: scaleX(0);"></div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">02</div>
+            <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.6; color: #7C7C96;">Many firms sell software.</p>
+            <p style="margin: 8px 0 0; font-size: 19px; line-height: 1.4; letter-spacing: -0.015em; font-weight: 600; color: #101040;">Sonderence designs operating models.</p>
+          </div>
+          <div style="background: #FFFFFF; padding: 28px 24px 32px;">
+            <div aria-hidden="true" data-meth-rail="" style="position: relative; height: 26px; margin-bottom: 22px;">
+              <div style="position: absolute; left: 0; width: 46%; top: 4px; height: 1px; background: #DBDBE2;"></div>
+              <div style="position: absolute; left: 0; width: 66%; top: 12px; height: 1px; background: #DBDBE2;"></div>
+              <div data-meth-bar="" style="position: absolute; left: 0; right: 0; top: 20px; height: 1px; background: #101040; transform-origin: left center; transform: scaleX(0);"></div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">03</div>
+            <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.6; color: #7C7C96;">Many firms build automations.</p>
+            <p style="margin: 8px 0 0; font-size: 19px; line-height: 1.4; letter-spacing: -0.015em; font-weight: 600; color: #101040;">Sonderence eliminates constraints.</p>
+          </div>
+          <div style="background: #FFFFFF; padding: 28px 24px 32px;">
+            <div aria-hidden="true" data-meth-rail="" style="position: relative; height: 26px; margin-bottom: 22px;">
+              <div style="position: absolute; left: 0; width: 46%; top: 4px; height: 1px; background: #DBDBE2;"></div>
+              <div style="position: absolute; left: 0; width: 66%; top: 12px; height: 1px; background: #DBDBE2;"></div>
+              <div data-meth-bar="" style="position: absolute; left: 0; right: 0; top: 20px; height: 1px; background: #101040; transform-origin: left center; transform: scaleX(0);"></div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">04</div>
+            <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.6; color: #7C7C96;">Many firms focus on implementation.</p>
+            <p style="margin: 8px 0 0; font-size: 19px; line-height: 1.4; letter-spacing: -0.015em; font-weight: 600; color: #101040;">Sonderence focuses on transformation.</p>
+          </div>
+        </div>
+
+        <div data-reveal="" style="margin-top: 56px; padding-top: 28px; border-top: 1px solid #DBDBE2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #101040; max-width: 560px;">Walk your operating model through with us. Forty-five minutes, zero cost, no obligation.</p>
+          <a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 10px; padding-bottom: 4px; border-bottom: 1px solid #101040; font-size: 15px; font-weight: 500; color: #101040; white-space: nowrap;" style-hover="color: #7C7C96; border-bottom-color: #7C7C96;"><span>Book a discovery call</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="standing" data-chapter="Standing" data-screen-label="Standing" style="background: #FFFFFF; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">Standing</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">Digital Implemntation partner to Berkeley Strategy Advisors.</h2>
+            <p style="margin: 24px 0 0; max-width: 640px; font-size: 18px; line-height: 1.7; color: #7C7C96; text-wrap: pretty;">Sonderence builds the embedded digital systems behind their operations, engagements, and provide technology consulting to businesses in Sacramento's Economic Gardening 2.0 program.</p>
+            <div style="margin-top: 36px; display: flex; align-items: center; gap: 20px;">
+              <img src="./img_9419-mso0pjy1-z14f.jpeg" alt="Berkeley Strategy Advisors logo" style="height: 81px; width: 129px; object-fit: contain">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96; line-height: 1.6;">Berkeley Strategy<br>Advisors — partner</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Who this is built for</div>
+            <p style="margin: 16px 0 20px; font-size: 15px; line-height: 1.6; color: #7C7C96;">Second-stage companies — past the startup phase, ready to scale or optimise operations.</p>
+              <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px; padding: 16px 0; ">
+                <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Revenue</div>
+                <div style="font-size: 15px; line-height: 1.5; color: #101040;">$1M – $50M</div>
+              </div>
+              <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px; padding: 16px 0; border-top: 1px solid #DBDBE2;">
+                <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Headcount</div>
+                <div style="font-size: 15px; line-height: 1.5; color: #101040;">5 – 99 Full-time employees</div>
+              </div>
+              <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px; padding: 16px 0; border-top: 1px solid #DBDBE2;">
+                <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Stage</div>
+                <div style="font-size: 15px; line-height: 1.5; color: #101040;">Past startup, scaling operations, mature management</div>
+              </div>
+          </div>
+        </div>
+
+        <div data-reveal="" style="margin-top: 72px; padding-top: 28px; border-top: 1px solid #DBDBE2;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">SELECTED ORGANIZATIONS &amp; ENGAGEMENTS</div>
+          <div data-r="four" style="margin-top: 20px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: #DBDBE2; border: 1px solid #DBDBE2;">
+            <div style="display: flex; align-items: center; justify-content: center; padding: 28px 20px; background: #FFFFFF; min-height: 92px;">
+              <img src="assets/logo-ecoalpha.png" alt="Eco-Alpha logo" style="max-width: 100%; height: 30px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; padding: 28px 20px; background: #FFFFFF; min-height: 92px;">
+              <img src="assets/logo-jayco.png" alt="Jayco Mailboxes logo" style="max-width: 100%; height: 26px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; padding: 28px 20px; background: #FFFFFF; min-height: 92px;">
+              <img src="assets/logo-indivisualeyes.png" alt="IndiVisual Eyes logo" style="max-width: 100%; height: 24px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; padding: 28px 20px; background: #FFFFFF; min-height: 92px;">
+              <img src="assets/logo-capitol.png" alt="Capitol City Permit Advisors logo" style="max-width: 100%; height: 44px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; padding: 28px 20px; background: #FFFFFF; min-height: 92px;">
+              <img src="assets/logo-precisionhome.png" alt="Precision Home Loans logo" style="max-width: 100%; height: 56px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal="" data-r="split" data-pubsec="" style="margin-top: 96px; padding-top: 44px; border-top: 1px solid #DBDBE2; display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">Public sector</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">We work inside the City of Sacramento's Economic Gardening 2.0 program.</h2>
+            <p style="margin: 24px 0 0; max-width: 640px; font-size: 18px; line-height: 1.7; color: #7C7C96; text-wrap: pretty;">Sonderence provides technology and digital implementation consulting to businesses inside of the Economic Gardening 2.0 Program.</p>
+            <div style="margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+              <img src="assets/logo-sac-osed.jpg" alt="City of Sacramento Office of Small Business and Economic Development logo" style="height: 62px; width: auto; object-fit: contain;">
+              <img src="assets/logo-nceg.jpg" alt="National Center for Economic Gardening logo" style="height: 40px; width: auto; object-fit: contain;">
+            </div>
+          </div>
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Who does what</div>
+            <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px; padding: 16px 0; margin-top: 8px;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Program</div>
+              <div style="font-size: 15px; line-height: 1.5; color: #101040;">City of Sacramento — Economic Gardening 2.0</div>
+            </div>
+            <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px; padding: 16px 0; border-top: 1px solid #DBDBE2;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Delivery</div>
+              <div style="font-size: 15px; line-height: 1.5; color: #101040;">Berkeley Strategy Advisors — runs the engagements with cohort companies</div>
+            </div>
+            <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px; padding: 16px 0; border-top: 1px solid #DBDBE2;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Research</div>
+              <div style="font-size: 15px; line-height: 1.5; color: #101040;">National Center for Economic Gardening (NCEG) — program partner, provides the research each cohort works from</div>
+            </div>
+            <div style="display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 24px; padding: 16px 0; border-top: 1px solid #DBDBE2;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Sonderence</div>
+              <div style="font-size: 15px; line-height: 1.5; color: #101040;">Technology and digital implementation consulting</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" data-chapter="The work" data-screen-label="The working set" style="background: #F7F7F9; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">The work</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">The framework we use.</h2>
+          </div>
+          <p style="margin: 0; padding-top: 6px; font-size: 18px; line-height: 1.7; color: #7C7C96; max-width: 640px; text-wrap: pretty;">Every engagement begins with Foundation — a free digital transformation assessment — and grows from there.</p>
+        </div>
+
+        <div data-reveal="" data-r="band" style="margin-top: 56px; background: #101040; padding: 40px; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 48px; align-items: center;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.72);">
+              <span>The on-ramp</span>
+              <span style="width: 20px; height: 1px; background: rgba(255,255,255,.34);"></span>
+              <span>Free</span>
+            </div>
+            <h3 style="margin: 18px 0 0; font-size: 30px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; color: #FFFFFF;">Sonderence Foundation</h3>
+            <p style="margin: 12px 0 0; max-width: 560px; font-size: 16px; line-height: 1.65; color: rgba(255,255,255,.72);">A digital transformation assessment. The starting point for every engagement, and the stage where analysis and diagnosis are made real.</p>
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" variant="inverse" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" hint-size="auto,40px">Book your assessment</x-import>
+          </div>
+        </div>
+
+        <div data-reveal="" style="margin-top: 56px; border-top: 1px solid #101040;">
+          <div data-r="rowhead" style="display: grid; grid-template-columns: 56px minmax(0, 3fr) minmax(0, 5fr) 180px; gap: 32px; padding: 14px 0; border-bottom: 1px solid #DBDBE2; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">
+            <div>#</div>
+            <div>Name</div>
+            <div>Offering</div>
+            <div style="text-align: right;">Investment</div>
+          </div>
+          <div data-r="row" style="display: grid; grid-template-columns: 56px minmax(0, 3fr) minmax(0, 5fr) 180px; gap: 32px; padding: 28px 0; border-bottom: 1px solid #DBDBE2;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7C7C96; padding-top: 5px;">01</div>
+            <div>
+              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Sonderence Gnosis</div>
+              <div style="margin-top: 6px; font-size: 14px; color: #7C7C96;">Digital Assessment &amp; Strategy Framework</div>
+            </div>
+            <p style="margin: 0; padding-top: 3px; font-size: 15px; line-height: 1.65; color: #7C7C96;">Develops a research-backed strategic framework that defines priorities, opportunities, and a practical transformation roadmap.</p>
+            <div style="text-align: right; padding-top: 3px;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #101040; font-variant-numeric: tabular-nums;">Fixed Fee @ $3,000</div>
+              <a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 14px; font-weight: 500; color: #101040; border-bottom: 1px solid #DBDBE2; padding-bottom: 3px;" style-hover="border-bottom-color: #101040;"><span>Discuss this</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
+            </div>
+          </div>
+          <div data-r="row" style="display: grid; grid-template-columns: 56px minmax(0, 3fr) minmax(0, 5fr) 180px; gap: 32px; padding: 28px 0; border-bottom: 1px solid #DBDBE2;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7C7C96; padding-top: 5px;">02</div>
+            <div>
+              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Sonderence Atlas</div>
+              <div style="margin-top: 6px; font-size: 14px; color: #7C7C96;">Data &amp; Knowledge Architecture</div>
+            </div>
+            <p style="margin: 0; padding-top: 3px; font-size: 15px; line-height: 1.65; color: #7C7C96;">Designs the data and knowledge architecture that enables information to move reliably across the organization.</p>
+            <div style="text-align: right; padding-top: 3px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #101040; font-variant-numeric: tabular-nums;">Starting @ $2,000</div><a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 14px; font-weight: 500; color: #101040; border-bottom: 1px solid #DBDBE2; padding-bottom: 3px;" style-hover="border-bottom-color: #101040;"><span>Discuss this</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a></div>
+          </div>
+          <div data-r="row" style="display: grid; grid-template-columns: 56px minmax(0, 3fr) minmax(0, 5fr) 180px; gap: 32px; padding: 28px 0; border-bottom: 1px solid #DBDBE2;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7C7C96; padding-top: 5px;">03</div>
+            <div>
+              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Sonderence Bridge</div>
+              <div style="margin-top: 6px; font-size: 14px; color: #7C7C96;">Digital Systems Implementation</div>
+            </div>
+            <p style="margin: 0; padding-top: 3px; font-size: 15px; line-height: 1.65; color: #7C7C96;">Implements integrated systems and workflows that connect people, software, and operations into a unified whole.</p>
+            <div style="text-align: right; padding-top: 3px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #101040; font-variant-numeric: tabular-nums;">Starting @ $6,000</div><a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 14px; font-weight: 500; color: #101040; border-bottom: 1px solid #DBDBE2; padding-bottom: 3px;" style-hover="border-bottom-color: #101040;"><span>Discuss this</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a></div>
+          </div>
+          <div data-r="row" style="display: grid; grid-template-columns: 56px minmax(0, 3fr) minmax(0, 5fr) 180px; gap: 32px; padding: 28px 0; border-bottom: 1px solid #DBDBE2;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7C7C96; padding-top: 5px;">04</div>
+            <div>
+              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Sonderence Studio</div>
+              <div style="margin-top: 6px; font-size: 14px; color: #7C7C96;">Custom Digital Development</div>
+            </div>
+            <p style="margin: 0; padding-top: 3px; font-size: 15px; line-height: 1.65; color: #7C7C96;">Builds custom digital products, platforms, and experiences designed around your operating model rather than generic software tools.</p>
+            <div style="text-align: right; padding-top: 3px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #101040; font-variant-numeric: tabular-nums;">Starting @ $12,000</div><a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 14px; font-weight: 500; color: #101040; border-bottom: 1px solid #DBDBE2; padding-bottom: 3px;" style-hover="border-bottom-color: #101040;"><span>Discuss this</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a></div>
+          </div>
+          <div data-r="row" style="display: grid; grid-template-columns: 56px minmax(0, 3fr) minmax(0, 5fr) 180px; gap: 32px; padding: 28px 0; border-bottom: 1px solid #DBDBE2;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7C7C96; padding-top: 5px;">05</div>
+            <div>
+              <div style="font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Sonderence Nexus</div>
+              <div style="margin-top: 6px; font-size: 14px; color: #7C7C96;">Digital Operations Partnership</div>
+            </div>
+            <p style="margin: 0; padding-top: 3px; font-size: 15px; line-height: 1.65; color: #7C7C96;">Provides ongoing measurement, optimization, and strategic guidance as the business continues to evolve.</p>
+            <div style="text-align: right; padding-top: 3px;">
+              <a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: #101040; border-bottom: 1px solid #DBDBE2; padding-bottom: 3px;" style-hover="border-bottom-color: #101040;"><span>Connect with us</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" data-chapter="05 / Transformation" data-screen-label="05 Transformation" style="background: #FFFFFF; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">05 / Transformation<br></div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">Measured by what changes.</h2>
+          </div>
+          <p style="margin: 0; padding-top: 6px; font-size: 18px; line-height: 1.7; color: #7C7C96; max-width: 640px; text-wrap: pretty;">Four outcomes we hold ourselves to be able to provide to our clients.</p>
+        </div>
+
+        <div data-reveal="" data-r="two" style="margin-top: 72px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #DBDBE2; border: 1px solid #DBDBE2;">
+          <div style="background: #FFFFFF; padding: 36px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="flex: 0 0 auto; width: 9px; min-width: 9px; height: 9px; border-radius: 50%; background: #101040;"></span>
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.018em;">Operational clarity</h3>
+            </div>
+            <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: #7C7C96;">Teams gain visibility into how work flows across the organization, making better decisions with less friction.</p>
+          </div>
+          <div style="background: #FFFFFF; padding: 36px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="flex: 0 0 auto; width: 9px; min-width: 9px; height: 9px; border-radius: 50%; background: #101040;"></span>
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.018em;">Connected systems</h3>
+            </div>
+            <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: #7C7C96;">Disconnected tools become integrated workflows that reduce manual effort and improve reliability.</p>
+          </div>
+          <div style="background: #FFFFFF; padding: 36px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="flex: 0 0 auto; width: 9px; min-width: 9px; height: 9px; border-radius: 50%; background: #101040;"></span>
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.018em;">Scalable operations</h3>
+            </div>
+            <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: #7C7C96;">Processes are designed to grow alongside the business without introducing unnecessary complexity.</p>
+          </div>
+          <div style="background: #FFFFFF; padding: 36px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span aria-hidden="true" style="flex: 0 0 auto; width: 9px; min-width: 9px; height: 9px; border-radius: 50%; background: #101040;"></span>
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.018em;">Technology with purpose</h3>
+            </div>
+            <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: #7C7C96;">Every implementation is tied to a measurable business objective instead of adopting technology for its own sake.</p>
+          </div>
+        </div>
+
+        <div data-reveal="" style="margin-top: 56px; padding-top: 28px; border-top: 1px solid #DBDBE2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #101040; max-width: 560px;">Which of these four your business needs first is the question the digital transformation assessment answers.</p>
+          <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" hint-size="auto,40px">Book a discovery call</x-import>
+        </div>
+      </div>
+    </section>
+
+    <section id="iteration" data-chapter="06 / Iteration" data-screen-label="06 Iteration" style="background: #F7F7F9; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">06 / Iteration</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">We adjust as evidence emerges.</h2>
+          </div>
+          <p style="margin: 0; padding-top: 6px; font-size: 18px; line-height: 1.7; color: #7C7C96; max-width: 640px; text-wrap: pretty;">Transformation is an ongoing process rather than a one-time implementation. We continuously measure outcomes, reassess constraints, and refine systems as the business evolves, so every improvement stays aligned with changing objectives.</p>
+        </div>
+
+        <figure data-reveal="" style="margin: 72px 0 0; position: relative; background: #F7F7F9; border: 1px solid #DBDBE2; padding: 56px 40px;">
+          <div data-iter-track="" style="position: relative; height: 120px;">
+            <div aria-hidden="true" style="position: absolute; left: 0; right: 50%; top: 60px; height: 0; border-top: 1px dashed #7C7C96;"></div>
+            <div aria-hidden="true" style="position: absolute; left: 50%; right: 0; top: 60px; height: 0; border-top: 1px solid #DBDBE2;"></div>
+            <div aria-hidden="true" data-iter-dot="" style="position: absolute; left: 0; top: 60px; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%; background: #101040; opacity: 0; z-index: 2; will-change: transform, opacity;"></div>
+            <div aria-hidden="true" data-iter-node="0" style="position: absolute; left: 0; top: 56px; width: 9px; height: 9px; border-radius: 50%; background: #DBDBE2;"></div>
+            <div aria-hidden="true" data-iter-node="0.25" style="position: absolute; left: 25%; top: 56px; width: 9px; height: 9px; border-radius: 50%; background: #7C7C96;"></div>
+            <div aria-hidden="true" data-iter-node="0.5" style="position: absolute; left: 50%; top: 54px; width: 13px; height: 13px; margin-left: -6px; border-radius: 50%; background: #101040;"></div>
+            <div aria-hidden="true" data-iter-node="1" style="position: absolute; right: 0; top: 56px; width: 9px; height: 9px; border-radius: 50%; background: #101040;"></div>
+            <div aria-hidden="true" style="position: absolute; left: 50%; top: 12px; right: 4px; height: 38px; border: 1px solid #DBDBE2; border-bottom: 0;"></div>
+            <div aria-hidden="true" data-iter-bridge="" style="position: absolute; left: 0; top: 0; right: 0; height: 120px;">
+              <div data-iter-seg="up" style="position: absolute; left: 50%; top: 60px; width: 0; height: 0; border-left: 1px solid #101040;"></div>
+              <div data-iter-seg="across" style="position: absolute; left: 50%; top: 12px; width: 0; height: 0; border-top: 1px solid #101040;"></div>
+              <div data-iter-seg="down" style="position: absolute; right: 4px; top: 12px; width: 0; height: 0; border-right: 1px solid #101040;"></div>
+            </div>
+            <div style="position: absolute; left: 0; top: 78px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Assumption</div>
+            <div style="position: absolute; left: 50%; top: 78px; margin-left: -6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Evidence</div>
+            <div style="position: absolute; right: 0; top: 78px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Refined</div>
+          </div>
+          <figcaption style="margin-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Network signal — a dotted path resolving into a measured one, and looping back</figcaption>
+        </figure>
+
+        <div data-reveal="" style="margin-top: 56px; padding-top: 28px; border-top: 1px solid #DBDBE2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #101040; max-width: 560px;">Every engagement starts at the same place. Book the assessment and we will show you the first loop.</p>
+          <a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 10px; padding-bottom: 4px; border-bottom: 1px solid #101040; font-size: 15px; font-weight: 500; color: #101040; white-space: nowrap;" style-hover="color: #7C7C96; border-bottom-color: #7C7C96;"><span>Book a discovery call</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" data-chapter="The practice" data-screen-label="About" style="background: #FFFFFF; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">The practice</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">An embedded partner.</h2>
+          </div>
+          <div style="max-width: 640px;">
+            <p style="margin: 0; padding-top: 6px; font-size: 18px; line-height: 1.7; color: #7C7C96; text-wrap: pretty;">Sonderence is a digital transformation consulting and development firm that helps organizations design better ways of operating. We work as an embedded partner — combining strategy, systems design, and implementation — to solve operational constraints and create lasting organizational capability rather than one-off technical solutions.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px;">
+              <span style="display: inline-flex; align-items: center; height: 26px; padding: 0 12px; border: 1px solid #101040; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Systems strategy</span>
+              <span style="display: inline-flex; align-items: center; height: 26px; padding: 0 12px; background: #DBDBE2; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Embedded partner</span>
+              <span style="display: inline-flex; align-items: center; height: 26px; padding: 0 12px; background: #DBDBE2; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Evidence-based</span>
+              <span style="display: inline-flex; align-items: center; height: 26px; padding: 0 12px; border: 1px solid #101040; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #101040;">Precise &amp; minimal</span>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal="" data-r="three" style="margin-top: 72px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #DBDBE2; border-top: 1px solid #DBDBE2;">
+          <div style="background: #F7F7F9; padding: 32px 24px 0 0;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">01</div>
+            <h3 style="margin: 16px 0 0; font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Begin with the business.</h3>
+            <p style="margin: 10px 0 32px; font-size: 15px; line-height: 1.7; color: #7C7C96;">Understand the operating reality before recommending the technology.</p>
+          </div>
+          <div style="background: #F7F7F9; padding: 32px 24px 0;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">02</div>
+            <h3 style="margin: 16px 0 0; font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Design for the whole system.</h3>
+            <p style="margin: 10px 0 32px; font-size: 15px; line-height: 1.7; color: #7C7C96;">Technology choices should resolve constraints, not introduce new ones.</p>
+          </div>
+          <div style="background: #F7F7F9; padding: 32px 0 0 24px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; color: #7C7C96;">03</div>
+            <h3 style="margin: 16px 0 0; font-size: 20px; font-weight: 600; letter-spacing: -0.018em;">Make the complex legible.</h3>
+            <p style="margin: 10px 0 32px; font-size: 15px; line-height: 1.7; color: #7C7C96;">Use evidence, precision, and restraint to create forward motion.</p>
+          </div>
+        </div>
+
+        <div data-reveal="" style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #DBDBE2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #101040; max-width: 560px;">If that is how you want to work, the next step is a conversation.</p>
+          <a href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" style="display: inline-flex; align-items: center; gap: 10px; padding-bottom: 4px; border-bottom: 1px solid #101040; font-size: 15px; font-weight: 500; color: #101040; white-space: nowrap;" style-hover="color: #7C7C96; border-bottom-color: #7C7C96;"><span>Book a discovery call</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" data-chapter="Questions" data-screen-label="FAQ" style="background: #F7F7F9; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px;">
+        <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 80px; align-items: start;">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96;">Questions</div>
+            <h2 style="margin: 24px 0 0; font-size: 44px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; text-wrap: balance;">What people ask before they start.</h2>
+            <p style="margin: 24px 0 0; max-width: 560px; font-size: 18px; line-height: 1.7; color: #7C7C96; text-wrap: pretty;">If your question isn't here, ask it on the call. We answer plainly, including when the answer is no.</p>
+          </div>
+          <div data-faq="" style="max-width: 640px; border-top: 1px solid #DBDBE2;">
+            <div data-faq-item="" style="border-bottom: 1px solid #DBDBE2;">
+              <button type="button" data-faq-q="" style="width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 24px; align-items: start; gap: 24px; padding: 24px 0; background: none; border: 0; text-align: left; cursor: pointer; font-family: 'Onest', system-ui, sans-serif; color: #101040;">
+                <span style="font-size: 20px; font-weight: 500; letter-spacing: -0.018em; line-height: 1.35;">Are you a software vendor or a consultancy?</span>
+                <span data-faq-sign="" aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; line-height: 1.4; color: #7C7C96; justify-self: end;">+</span>
+              </button>
+              <div data-faq-a="" style="padding: 0;">
+                <p style="margin: 0 0 28px; font-size: 16px; line-height: 1.75; color: #7C7C96; text-wrap: pretty;">Neither on its own. We design the operating system a business runs on and then build it — strategy, systems design and implementation in the same engagement. We do not resell software, and we are not tied to a platform. Where an off-the-shelf tool is the right answer, we will say so and configure it rather than build around it.</p>
+              </div>
+            </div>
+            <div data-faq-item="" style="border-bottom: 1px solid #DBDBE2;">
+              <button type="button" data-faq-q="" style="width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 24px; align-items: start; gap: 24px; padding: 24px 0; background: none; border: 0; text-align: left; cursor: pointer; font-family: 'Onest', system-ui, sans-serif; color: #101040;">
+                <span style="font-size: 20px; font-weight: 500; letter-spacing: -0.018em; line-height: 1.35;">How long does an engagement take, and what does it cost?</span>
+                <span data-faq-sign="" aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; line-height: 1.4; color: #7C7C96; justify-self: end;">+</span>
+              </button>
+              <div data-faq-a="" style="padding: 0;">
+                <p style="margin: 0 0 28px; font-size: 16px; line-height: 1.75; color: #7C7C96; text-wrap: pretty;">It depends on the constraint, so we scope it before we quote it. Every engagement opens with an analysis and diagnosis phase that produces a written scope of work: phases, deliverables, dependencies and total investment. You decide whether to continue with that document in hand. Nothing is open-ended and nothing is billed against a moving target.</p>
+              </div>
+            </div>
+            <div data-faq-item="" style="border-bottom: 1px solid #DBDBE2;">
+              <button type="button" data-faq-q="" style="width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 24px; align-items: start; gap: 24px; padding: 24px 0; background: none; border: 0; text-align: left; cursor: pointer; font-family: 'Onest', system-ui, sans-serif; color: #101040;">
+                <span style="font-size: 20px; font-weight: 500; letter-spacing: -0.018em; line-height: 1.35;">Do we need to replace the systems we already have?</span>
+                <span data-faq-sign="" aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; line-height: 1.4; color: #7C7C96; justify-self: end;">+</span>
+              </button>
+              <div data-faq-a="" style="padding: 0;">
+                <p style="margin: 0 0 28px; font-size: 16px; line-height: 1.75; color: #7C7C96; text-wrap: pretty;">Usually not. Most of what we find is not a bad tool but an unclear process running across three of them. We map what you have, keep what earns its place, and replace only where a system is the actual constraint. A rip-and-replace recommendation has to justify itself against the cost of the disruption.</p>
+              </div>
+            </div>
+            <div data-faq-item="" style="border-bottom: 1px solid #DBDBE2;">
+              <button type="button" data-faq-q="" style="width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 24px; align-items: start; gap: 24px; padding: 24px 0; background: none; border: 0; text-align: left; cursor: pointer; font-family: 'Onest', system-ui, sans-serif; color: #101040;">
+                <span style="font-size: 20px; font-weight: 500; letter-spacing: -0.018em; line-height: 1.35;">What happens to the work after you leave?</span>
+                <span data-faq-sign="" aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; line-height: 1.4; color: #7C7C96; justify-self: end;">+</span>
+              </button>
+              <div data-faq-a="" style="padding: 0;">
+                <p style="margin: 0 0 28px; font-size: 16px; line-height: 1.75; color: #7C7C96; text-wrap: pretty;">You own it. Documentation, process maps, configurations and access sit with your team, and we train the people who will run it before the engagement closes. The measure of the work is whether your organization can operate and extend the system without us.</p>
+              </div>
+            </div>
+            <div data-faq-item="" style="border-bottom: 1px solid #DBDBE2;">
+              <button type="button" data-faq-q="" style="width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 24px; align-items: start; gap: 24px; padding: 24px 0; background: none; border: 0; text-align: left; cursor: pointer; font-family: 'Onest', system-ui, sans-serif; color: #101040;">
+                <span style="font-size: 20px; font-weight: 500; letter-spacing: -0.018em; line-height: 1.35;">Are we too small, or too early, to work with you?</span>
+                <span data-faq-sign="" aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; line-height: 1.4; color: #7C7C96; justify-self: end;">+</span>
+              </button>
+              <div data-faq-a="" style="padding: 0;">
+                <p style="margin: 0 0 28px; font-size: 16px; line-height: 1.75; color: #7C7C96; text-wrap: pretty;">Size matters less than whether you have outgrown the way you work. We work with growing businesses, public sector programs and the small firms inside them — including cohort companies in the City of Sacramento's Economic Gardening 2.0 program. If the engagement is not the right use of your money, we will tell you on the first call.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" data-chapter="Get started" data-screen-label="Contact" style="background: #DBDBE2; border-top: 1px solid #DBDBE2;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px;">
+        <div data-reveal="" style="position: relative; background: #101040; overflow: hidden;">
+          <div aria-hidden="true" data-cta-grid="" style="position: absolute; inset: -32px; background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px); background-size: 32px 32px; will-change: background-position;"></div>
+          <div aria-hidden="true" data-cta-flow="" style="position: absolute; inset: 0; overflow: hidden;">
+            <div data-cta-dot="" data-row="96" data-period="17" style="position: absolute; left: 0; top: 96px; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: rgba(255,255,255,.85); opacity: 0; will-change: transform, opacity;"></div>
+            <div data-cta-dot="" data-row="224" data-period="23" style="position: absolute; left: 0; top: 224px; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: rgba(255,255,255,.6); opacity: 0; will-change: transform, opacity;"></div>
+            <div data-cta-dot="" data-row="160" data-period="29" data-dir="-1" style="position: absolute; left: 0; top: 160px; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: rgba(255,255,255,.5); opacity: 0; will-change: transform, opacity;"></div>
+          </div>
+          <div data-r="ctabox" style="position: relative; padding: 88px 56px; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 64px; align-items: end;">
+            <div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.72);">Get started</div>
+              <h2 style="margin: 28px 0 0; font-size: 56px; line-height: 1.06; letter-spacing: -0.03em; font-weight: 600; color: #FFFFFF; text-wrap: balance;">Transformation begins with clarity.</h2>
+              <p style="margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: rgba(255,255,255,.72);">Start with a Foundation assessment.</p>
+            </div>
+            <div style="display: flex; justify-content: flex-end; padding-bottom: 6px;">
+              <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" variant="inverse" size="lg" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" hint-size="auto,48px">Book a call</x-import>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <sc-if value="{{ stickyCta }}" hint-placeholder-val="{{ true }}">
+    <div id="v2-sticky" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: rgba(255,255,255,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid #DBDBE2; opacity: {{ stickyOpacity }}; transform: {{ stickyTransform }}; pointer-events: {{ stickyPointer }}; transition: opacity 200ms cubic-bezier(.2,0,0,1), transform 320ms cubic-bezier(.16,1,.3,1);">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96;">Foundation assessment</span>
+          <span aria-hidden="true" style="width: 20px; height: 1px; background: #DBDBE2;"></span>
+          <span style="font-size: 15px; color: #101040;">Zero Cost, 45 minutes, no obligation.</span>
+        </div>
+        <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" size="sm" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" hint-size="auto,36px">Book a call</x-import>
+      </div>
+    </div>
+  </sc-if>
+
+  <footer style="background: #DBDBE2;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px 56px;">
+      <div data-r="split" style="border-top: 1px solid #7C7C96; padding-top: 40px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 64px;">
+        <div role="img" aria-label="Sonderence">
+          <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Logo" size="24" hint-size="150px,24px"></x-import>
+          <p style="margin: 20px 0 44px; max-width: 360px; font-size: 14px; line-height: 1.7; color: #101040;">Technology that serves the business. Digital ecosystems designed around the way a business actually works.</p>
+          <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" as="a" href="https://calendly.com/ellynsuangani/book-free-ai-consultation?month=2026-08" hint-size="auto,40px">Book a discovery call</x-import>
+        </div>
+        <div data-r="three" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96; margin-bottom: 4px;">Our Process</div>
+            <a href="#analysis" style="font-size: 14px; color: #101040;">Analysis</a>
+            <a href="#diagnosis" style="font-size: 14px; color: #101040;">Diagnosis</a>
+            <a href="#hypothesis" style="font-size: 14px; color: #101040;">Hypothesis</a>
+            <a href="#methodology" style="font-size: 14px; color: #101040;">Methodology</a>
+            <a href="#impact" style="font-size: 14px; color: #101040;">Transformation</a>
+            <a href="#iteration" style="font-size: 14px; color: #101040;">Iteration</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96; margin-bottom: 4px;">Practice</div>
+            <a href="#services" style="font-size: 14px; color: #101040;">The working set</a>
+            <a href="#about" style="font-size: 14px; color: #101040;">About</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 48px; padding-top: 20px; border-top: 1px solid #7C7C96; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #101040;">© 2026 Sonderence</span>
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <a href="Privacy%20Policy.dc.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #101040;" style-hover="color: #7C7C96;">Privacy policy</a>
+          <a href="Terms%20of%20Service.dc.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #101040;" style-hover="color: #7C7C96;">Terms of service</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" style="display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #101040;" style-hover="color: #7C7C96;">
+            <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Icon" name="instagram" size="17" hint-size="17px,17px"></x-import>
+            
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" style="display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #101040;" style-hover="color: #7C7C96;">
+            <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Icon" name="linkedin" size="17" hint-size="17px,17px"></x-import>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;none&quot;,&quot;restrained&quot;,&quot;sequenced&quot;],&quot;default&quot;:&quot;sequenced&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showChapterReadout&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conversion&quot;}}">
+class Component extends DCLogic {
+  state = { chapterLabel: "", processOpen: false, stickyVisible: false, menuOpen: false };
+
+  renderVals() {
+    return {
+      chapterLabel: this.props.showChapterReadout === false ? "" : this.state.chapterLabel,
+      stickyCta: this.props.stickyCta !== false,
+      stickyOpacity: this.state.stickyVisible ? 1 : 0,
+      stickyTransform: this.state.stickyVisible ? "none" : "translateY(100%)",
+      stickyPointer: this.state.stickyVisible ? "auto" : "none",
+      processOpen: this.state.processOpen,
+      toggleProcess: e => { e.preventDefault(); this.setState(s => ({ processOpen: !s.processOpen })); },
+      closeProcess: () => this.setState({ processOpen: false }),
+      menuOpen: this.state.menuOpen,
+      toggleMenu: e => { e.preventDefault(); this.setState(s => ({ menuOpen: !s.menuOpen, processOpen: false })); },
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
+
+  setupFaq() {
+    const items = Array.from(document.querySelectorAll('[data-faq-item]'));
+    if (!items.length) return;
+    const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const set = (item, open, animate) => {
+      const a = item.querySelector('[data-faq-a]');
+      const sign = item.querySelector('[data-faq-sign]');
+      const btn = item.querySelector('[data-faq-q]');
+      if (!a) return;
+      a.style.overflow = "hidden";
+      const target = open ? a.scrollHeight + "px" : "0px";
+      if (animate && !reduced) {
+        a.style.transition = "height 200ms cubic-bezier(.2,0,0,1), opacity 140ms cubic-bezier(.2,0,0,1)";
+        a.style.height = open ? "0px" : a.scrollHeight + "px";
+        void a.offsetHeight;
+      } else {
+        a.style.transition = "";
+      }
+      a.style.height = target;
+      a.style.opacity = open ? "1" : "0";
+      if (sign) sign.textContent = open ? "–" : "+";
+      if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+      item.dataset.faqOpen = open ? "1" : "0";
+    };
+    items.forEach((item, i) => {
+      const btn = item.querySelector('[data-faq-q]');
+      set(item, i === 0, false);
+      if (i === 0) item.querySelector('[data-faq-a]').style.height = "auto";
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const isOpen = item.dataset.faqOpen === "1";
+        items.forEach(other => {
+          if (other === item) return;
+          if (other.dataset.faqOpen === "1") {
+            const oa = other.querySelector('[data-faq-a]');
+            oa.style.height = oa.scrollHeight + "px";
+            void oa.offsetHeight;
+            set(other, false, true);
+          }
+        });
+        set(item, !isOpen, true);
+        if (!isOpen) {
+          const a = item.querySelector('[data-faq-a]');
+          a.addEventListener("transitionend", () => { if (item.dataset.faqOpen === "1") a.style.height = "auto"; }, { once: true });
+        }
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.observers = [];
+    this.setupFaq();
+    this.setupReveal();
+    this.setupSpy();
+    this.setupProgress();
+    this.setupSticky();
+    this.setupOrbits();
+    this.setupGridScan();
+    this.setupDiagnosis();
+    this.setupHypothesis();
+    this.setupMethodology();
+    this.setupIteration();
+    this.setupCtaGrid();
+    this.setupPageFade();
+    this.onDocClick = e => {
+      if (!this.state.processOpen) return;
+      if (e.target.closest && e.target.closest("nav")) return;
+      this.setState({ processOpen: false });
+    };
+    document.addEventListener("click", this.onDocClick);
+    this.onViewportResize = () => {
+      if (window.innerWidth > 900 && this.state.menuOpen) this.setState({ menuOpen: false });
+    };
+    window.addEventListener("resize", this.onViewportResize);
+  }
+
+  componentWillUnmount() {
+    this.observers?.forEach(o => o.disconnect());
+    if (this.onScroll) window.removeEventListener("scroll", this.onScroll);
+    if (this.onStickyScroll) window.removeEventListener("scroll", this.onStickyScroll);
+    if (this.orbitRaf) cancelAnimationFrame(this.orbitRaf);
+    if (this.gridRaf) cancelAnimationFrame(this.gridRaf);
+    if (this.diagRaf) cancelAnimationFrame(this.diagRaf);
+    if (this.hypRaf) cancelAnimationFrame(this.hypRaf);
+    if (this.methRaf) cancelAnimationFrame(this.methRaf);
+    if (this.iterRaf) cancelAnimationFrame(this.iterRaf);
+    if (this.ctaRaf) cancelAnimationFrame(this.ctaRaf);
+    if (this.onMethResize) window.removeEventListener("resize", this.onMethResize);
+    if (this.onHypResize) window.removeEventListener("resize", this.onHypResize);
+    if (this.onDocClick) document.removeEventListener("click", this.onDocClick);
+    if (this.onRevealSweep) { window.removeEventListener("scroll", this.onRevealSweep); window.removeEventListener("hashchange", this.onRevealSweep); }
+    if (this.onViewportResize) window.removeEventListener("resize", this.onViewportResize);
+  }
+
+  // animation loops idle while their section is off screen or hidden by a breakpoint —
+  // on a phone that leaves one loop running instead of seven
+  awake(el) {
+    if (!el) return true;
+    if (!this._vis) {
+      this._vis = new WeakMap();
+      this._visObs = new IntersectionObserver(
+        es => es.forEach(e => this._vis.set(e.target, e.isIntersecting)),
+        { rootMargin: "200px 0px" }
+      );
+      this.observers.push(this._visObs);
+    }
+    if (!this._vis.has(el)) { this._vis.set(el, true); this._visObs.observe(el); }
+    return this._vis.get(el) !== false && el.offsetParent !== null;
+  }
+
+  // cross-page navigation fades out and the arriving page fades in, so the legal
+  // pages no longer cut straight to white
+  setupPageFade() {
+    // The arriving page always fades itself in — imperceptible when the browser also
+    // runs its own cross-document transition, and the only transition when it skips one.
+    if (this.motion === "none") return;
+    const root = document.body;
+    root.style.transition = "opacity 300ms cubic-bezier(.16,1,.3,1)";
+    root.style.opacity = "0";
+    requestAnimationFrame(() => { root.style.opacity = "1"; });
+  }
+
+  get motion() {
+    const m = this.props.motion ?? "restrained";
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return "none";
+    return m;
+  }
+
+  setupReveal() {
+    const mode = this.motion;
+    if (mode === "none") return;
+    const stagger = mode === "sequenced";
+    const vh = window.innerHeight;
+    // phones get a shorter lift and a quicker cascade — a long stagger reads as lag while scrolling
+    const narrow = window.innerWidth <= 900;
+    const lift = narrow ? 12 : (stagger ? 20 : 12);
+    const dur = narrow ? 460 : (stagger ? 600 : 420);
+    const step = narrow ? 40 : 70;
+    const kidDur = narrow ? 420 : 520;
+    const settle = el => {
+      el.addEventListener("transitionend", () => { el.style.willChange = ""; el.style.transition = ""; }, { once: true });
+    };
+    const hidden = Array.from(document.querySelectorAll("[data-reveal]"))
+      .filter(n => n.getBoundingClientRect().top > vh * 0.85);
+    hidden.forEach(n => {
+      n.style.opacity = "0";
+      n.style.transform = "translateY(" + lift + "px)";
+      n.style.willChange = "opacity, transform";
+    });
+    // IntersectionObserver only reports state CHANGES, so an element carried from
+    // below the fold to above it in one jump (anchor link, flick scroll) is never
+    // reported. This sweep catches those and shows them with no transition.
+    const pending = new Set(hidden);
+    const show = el => {
+      pending.delete(el);
+      el.style.transition = "";
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      el.style.willChange = "";
+      Array.from(el.children).forEach(k => {
+        if (k.style.opacity === "0") { k.style.transition = ""; k.style.opacity = "1"; k.style.transform = "none"; k.style.willChange = ""; }
+      });
+    };
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        io.unobserve(el);
+        pending.delete(el);
+        el.style.transition = `opacity ${dur}ms cubic-bezier(.16,1,.3,1), transform ${dur}ms cubic-bezier(.16,1,.3,1)`;
+        el.style.opacity = "1";
+        el.style.transform = "none";
+        settle(el);
+        if (!stagger) return;
+        const kids = Array.from(el.children);
+        if (kids.length < 2 || kids.length > 11) return;
+        kids.forEach((k, i) => {
+          k.style.opacity = "0";
+          k.style.transform = "translateY(" + Math.min(12, lift) + "px)";
+          const delay = Math.min(i, 5) * step;   // the cascade never runs longer than five beats
+          requestAnimationFrame(() => {
+            k.style.transition = `opacity ${kidDur}ms cubic-bezier(.16,1,.3,1) ${delay}ms, transform ${kidDur}ms cubic-bezier(.16,1,.3,1) ${delay}ms`;
+            k.style.opacity = "1";
+            k.style.transform = "none";
+            settle(k);
+          });
+        });
+      });
+    }, { rootMargin: narrow ? "0px 0px -6% 0px" : "0px 0px -12% 0px", threshold: 0.05 });
+    hidden.forEach(n => io.observe(n));
+    this.observers.push(io);
+    let sweeping = false;
+    const sweep = () => {
+      sweeping = false;
+      if (!pending.size) return;
+      for (const el of Array.from(pending)) {
+        if (el.getBoundingClientRect().bottom < 0) { io.unobserve(el); show(el); }
+      }
+    };
+    this.onRevealSweep = () => { if (!sweeping) { sweeping = true; requestAnimationFrame(sweep); } };
+    window.addEventListener("scroll", this.onRevealSweep, { passive: true });
+    window.addEventListener("hashchange", this.onRevealSweep);
+  }
+
+  setupSpy() {
+    const io = new IntersectionObserver(entries => {
+      const vis = entries.filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (!vis.length) return;
+      const label = vis[0].target.getAttribute("data-chapter") || "";
+      if (label !== this.state.chapterLabel) this.setState({ chapterLabel: label });
+    }, { rootMargin: "-72px 0px -70% 0px", threshold: 0 });
+    document.querySelectorAll("[data-chapter]").forEach(s => io.observe(s));
+    this.observers.push(io);
+  }
+
+  setupDiagnosis() {
+    const silos = Array.from(document.querySelectorAll("[data-silo]"));
+    const hub = document.querySelector("[data-hub]");
+    const hubRing = document.querySelector("[data-hub-ring]");
+    const net = document.querySelector("[data-net]");
+    const inners = Array.from(document.querySelectorAll("[data-inner]"));
+    const ghosts = Array.from(document.querySelectorAll("[data-ghost]"));
+    const links = Array.from(document.querySelectorAll("[data-frag-link]"));
+    const res = Array.from(document.querySelectorAll("[data-res-node]"));
+    const travels = Array.from(document.querySelectorAll("[data-res-travel]"));
+    const travel = travels[0];
+    if (!silos.length && !res.length) return;
+    // geometry: every silo reaches for the hub
+    this.fragGeom = () => {
+      const host = hub && hub.parentElement;
+      const key = host ? host.clientWidth + "x" + host.clientHeight : "0";
+      if (this._fragKey !== key || !this._fragG) {
+        this._fragKey = key;
+        const hx = hub.offsetLeft + hub.offsetWidth / 2, hy = hub.offsetTop + hub.offsetHeight / 2;
+        const pt = n => ({ x: n.offsetLeft + n.offsetWidth / 2, y: n.offsetTop + n.offsetHeight / 2 });
+        this._fragG = links.map(el => {
+          const a = pt(silos[+el.dataset.from] || silos[0]);
+          const to = +el.dataset.to;
+          const b = to < 0 ? { x: hx, y: hy } : pt(silos[to] || silos[0]);
+          return { x: a.x, y: a.y, len: Math.hypot(b.x - a.x, b.y - a.y), ang: Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI };
+        });
+        // fit the whole turning network inside the panel: nothing may swing past the frame
+        if (host) {
+          const cx = host.clientWidth / 2, cy = host.clientHeight * 0.52;
+          let maxR = 1;
+          for (const n of silos) {
+            const x = n.offsetLeft + n.offsetWidth / 2, y = n.offsetTop + n.offsetHeight / 2;
+            maxR = Math.max(maxR, Math.hypot(x - cx, y - cy));
+          }
+          const room = Math.min(host.clientWidth, host.clientHeight) / 2 - 16;
+          this._fragScale = Math.min(0.92, room / maxR);
+        }
+      }
+      return this._fragG;
+    };
+    const rnd = (i, s) => { const x = Math.sin(i * 91.7 + s * 217.3 + 12.9) * 43758.5453; return x - Math.floor(x); };
+    const CYCLE = 7.3;
+    this.resCentres = () => {
+      const host = travel && travel.parentElement;
+      const w = host ? host.clientWidth + "x" + host.clientHeight : "0";
+      if (this._resW !== w || !this._resC) {
+        this._resW = w;
+        this._resC = res.map(n => n.offsetLeft + n.offsetWidth / 2);
+      }
+      return this._resC;
+    };
+    if (hub && hub.parentElement && window.ResizeObserver) {
+      const ro = new ResizeObserver(() => { this._fragG = null; this._resC = null; });
+      ro.observe(hub.parentElement);
+      this.observers.push(ro);
+    }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { this._fragG = null; this._resC = null; });
+    window.addEventListener("load", () => { this._fragG = null; this._resC = null; });
+    const t0 = performance.now();
+    const tick = now => {
+      if (!this.awake(document.querySelector("#diagnosis figure"))) { this.diagRaf = requestAnimationFrame(tick); return; }
+      // narrow screens run these heavier passes at ~30fps — invisible in a slow drift, half the work
+      if (window.innerWidth <= 900) {
+        if (now - (this._diagLast || 0) < 32) { this.diagRaf = requestAnimationFrame(tick); return; }
+        this._diagLast = now;
+      }
+      const t = (now - t0) / 1000;
+      // fragmented side — silos hold; each reaches for the hub and breaks short
+      const geom = this.fragGeom();
+      if (net) {
+        // one steady circular turn, contained by the fitted scale
+        const spin = (t / 64) * 360;
+        net.style.transform = "scale(" + (this._fragScale || 0.8).toFixed(3) + ") rotate(" + spin.toFixed(3) + "deg)";
+      }
+      if (hubRing) hubRing.style.opacity = (0.45 + 0.45 * (0.5 + 0.5 * Math.sin((t / 6) * Math.PI * 2))).toFixed(3);
+      for (let i = 0; i < links.length && i < geom.length; i++) {
+        const el = links[i], g = geom[i];
+        const reach = 0.68 + rnd(i, 11) * 0.2;           // every signal stops short of its target
+        const speed = 8 + rnd(i, 9) * 9;                 // px/s, dashes stream continuously
+        el.style.left = g.x + "px";
+        el.style.top = g.y + "px";
+        el.style.transform = "rotate(" + g.ang.toFixed(2) + "deg)";
+        el.style.width = (g.len * reach).toFixed(1) + "px";
+        el.style.backgroundPosition = (-((t * speed) % 11)).toFixed(1) + "px 0";
+        el.style.opacity = (0.2 + 0.45 * (0.5 + 0.5 * Math.sin((t / (6 + rnd(i, 10) * 7) + rnd(i, 12)) * Math.PI * 2))).toFixed(3);
+      }
+      // resolved side — a single measured pass, left to right, then rest
+      const centres = this.resCentres();
+      if (travels.length && centres.length > 1) {
+        const first = centres[0], last = centres[centres.length - 1];
+        const span = last - first;
+        const win = Math.max(18, span / ((centres.length - 1) * 2.6));
+        // dots run on before the first node and off past the last one, so the
+        // wrap happens off the rail — constant speed, no reset at the end
+        const lead = 30;
+        const from = first - lead, to = last, full = to - from;
+        const xs = [];
+        for (let j = 0; j < travels.length; j++) {
+          const pos = ((t / CYCLE) + j / travels.length) % 1;
+          const x = from + pos * full;
+          // eases on over the run-up, then snuffs out in the last few px as it
+          // lands, so the node it arrives at takes the light over
+          const edge = Math.max(0, Math.min(1, (x - from) / lead, (to - x) / 9));
+          xs.push({ x: x, a: edge });
+          travels[j].style.transform = "translateX(" + (x - 44 - 4.5).toFixed(1) + "px)";
+          travels[j].style.opacity = edge.toFixed(3);
+        }
+        // each node expands on arrival, holds, then contracts back — same beat everywhere
+        const smooth = v => v <= 0 ? 0 : v >= 1 ? 1 : v * v * (3 - 2 * v);
+        const RISE = 0.22, HOLD = 0.62, FALL = 0.5;
+        const gap = CYCLE / travels.length;
+        for (let i = 0; i < res.length; i++) {
+          const at = (centres[i] - from) / full;
+          let u = ((t - at * CYCLE) % gap + gap) % gap;   // seconds since a dot last arrived here
+          const k = u < RISE ? smooth(u / RISE)
+            : u < RISE + HOLD ? 1
+            : 1 - smooth((u - RISE - HOLD) / FALL);
+          res[i].style.opacity = (0.42 + 0.58 * k).toFixed(3);
+          res[i].style.boxShadow = k > 0.05 ? "0 0 0 " + (k * 7.5).toFixed(1) + "px rgba(16,16,64," + (k * 0.16).toFixed(3) + ")" : "none";
+        }
+      }
+      this.diagRaf = requestAnimationFrame(tick);
+    };
+    this.diagRaf = requestAnimationFrame(tick);
+  }
+
+  setupGridScan() {
+    const cells = Array.from(document.querySelectorAll("[data-cell]"));
+    if (!cells.length) return;
+    const COLS = 8;
+    const WHITE = [255, 255, 255], SILVER = [219, 219, 226], NAVY = [16, 16, 64];
+    const rnd = (i, s) => { const x = Math.sin(i * 127.1 + s * 311.7 + 74.3) * 43758.5453; return x - Math.floor(x); };
+    const mix = (a, b, k) => [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k];
+    const css = c => "rgb(" + Math.round(c[0]) + "," + Math.round(c[1]) + "," + Math.round(c[2]) + ")";
+    // each cell breathes on its own slow clock; neighbours are pushed out of phase
+    const cfg = cells.map((_, i) => {
+      const col = i % COLS, row = Math.floor(i / COLS);
+      return {
+        period: 8.4 + rnd(i, 1) * 11.6,
+        phase: rnd(i, 2) + (col * 0.37 + row * 0.53) % 1,
+        peak: 0.24 + rnd(i, 3) * 0.7,
+        duty: 0.12 + rnd(i, 4) * 0.26,
+        skew: 0.25 + rnd(i, 6) * 0.55,
+        twin: rnd(i, 7) > 0.6,
+        navy: rnd(i, 5) > 0.58,
+        depth: 0.6 + rnd(i, 8) * 0.4
+      };
+    });
+    const t0 = performance.now();
+    const tick = now => {
+      if (!this.awake(document.querySelector("[data-grid-scan]"))) { this.gridRaf = requestAnimationFrame(tick); return; }
+      // narrow screens run these heavier passes at ~30fps — invisible in a slow drift, half the work
+      if (window.innerWidth <= 900) {
+        if (now - (this._gridLast || 0) < 32) { this.gridRaf = requestAnimationFrame(tick); return; }
+        this._gridLast = now;
+      }
+      const t = (now - t0) / 1000;
+      for (let i = 0; i < cells.length; i++) {
+        const c = cfg[i];
+        const p = ((t / c.period) + c.phase) % 1;
+        // long rest, one soft rise and fall per cycle
+        const pulse = (u, skew) => {
+          if (u <= 0 || u >= 1) return 0;
+          const v = u < skew ? (u / skew) * 0.5 : 0.5 + ((u - skew) / (1 - skew)) * 0.5;
+          const s = Math.sin(v * Math.PI);
+          return s * s;
+        };
+        let k = pulse(p / c.duty, c.skew);
+        if (c.twin) {
+          const q = (p - c.duty * 1.9) / (c.duty * 0.62);
+          k = Math.max(k, pulse(q, 1 - c.skew) * 0.55);
+        }
+        const fill = k * c.peak;
+        cells[i].style.backgroundColor = css(c.navy ? mix(mix(WHITE, SILVER, 0.22), NAVY, fill * c.depth) : mix(WHITE, SILVER, fill));
+      }
+      this.gridRaf = requestAnimationFrame(tick);
+    };
+    this.gridRaf = requestAnimationFrame(tick);
+  }
+
+  setupCtaGrid() {
+    const grid = document.querySelector("[data-cta-grid]");
+    const flow = document.querySelector("[data-cta-flow]");
+    if (!grid || !flow) return;
+    const dots = Array.from(flow.querySelectorAll("[data-cta-dot]")).map(d => ({
+      el: d,
+      period: parseFloat(d.dataset.period) || 20,
+      dir: parseFloat(d.dataset.dir) || 1,
+      offset: Math.random() * (parseFloat(d.dataset.period) || 20)
+    }));
+    const t0 = performance.now();
+    const tick = now => {
+      if (!this.awake(flow)) { this.ctaRaf = requestAnimationFrame(tick); return; }
+      const t = (now - t0) / 1000;
+      // the grid drifts one cell per 24s — slow enough to read as breathing, not scrolling
+      const gx = (t / 24) * 32 % 32, gy = (t / 38) * 32 % 32;
+      grid.style.backgroundPosition = gx.toFixed(2) + "px " + gy.toFixed(2) + "px, " + gx.toFixed(2) + "px " + gy.toFixed(2) + "px";
+      const W = flow.clientWidth;
+      for (const d of dots) {
+        const p = (((t + d.offset) % d.period) + d.period) % d.period / d.period;
+        const x = d.dir > 0 ? p * W : W - p * W;
+        d.el.style.transform = "translateX(" + x.toFixed(2) + "px)";
+        d.el.style.opacity = (Math.max(0, Math.sin(p * Math.PI)) * 0.9).toFixed(3);
+      }
+      this.ctaRaf = requestAnimationFrame(tick);
+    };
+    this.ctaRaf = requestAnimationFrame(tick);
+  }
+
+  setupIteration() {
+    const track = document.querySelector("[data-iter-track]");
+    if (!track) return;
+    const dot = track.querySelector("[data-iter-dot]");
+    const bridge = track.querySelector("[data-iter-bridge]");
+    const segUp = track.querySelector('[data-iter-seg="up"]');
+    const segAcross = track.querySelector('[data-iter-seg="across"]');
+    const segDown = track.querySelector('[data-iter-seg="down"]');
+    const nodes = Array.from(track.querySelectorAll("[data-iter-node]"))
+      .map(n => ({ el: n, at: parseFloat(n.dataset.iterNode), base: getComputedStyle(n).backgroundColor }));
+    if (!dot) return;
+    const runTime = 3.6, drawTime = 2.4, hold = 1.2, clear = 1.3;
+    const ease = v => v <= 0 ? 0 : v >= 1 ? 1 : v * v * (3 - 2 * v);
+    const cycle = runTime + drawTime + hold;
+    const t0 = performance.now();
+    const tick = now => {
+      if (!this.awake(track)) { this.iterRaf = requestAnimationFrame(tick); return; }
+      const t = ((now - t0) / 1000) % cycle;
+      const W = track.clientWidth, half = W / 2, rise = 48;
+      // the bridge stops on the refined node's centre, 4.5px inside the right edge
+      const span = half - 4.5;
+      // the descent stops short of the refined node — it arrives at it, it does not touch it
+      const drop = rise - 10;
+      const setUp = v => { segUp.style.height = v.toFixed(2) + "px"; segUp.style.top = (60 - v).toFixed(2) + "px"; };
+      if (t < runTime) {
+        // dot runs the dashed path only, assumption → evidence
+        const p = t / runTime;
+        dot.style.transform = "translate(" + (p * half).toFixed(2) + "px,0)";
+        dot.style.opacity = ease(Math.min(p / 0.16, (1 - p) / 0.07)).toFixed(3);
+        // the finished bridge eases away while the next dot is already running — no dead beat
+        if (t < clear) {
+          setUp(rise); segAcross.style.width = span.toFixed(2) + "px"; segDown.style.height = rise.toFixed(2) + "px";
+          bridge.style.opacity = (1 - ease(t / clear)).toFixed(3);
+        } else {
+          setUp(0); segAcross.style.width = "0px"; segDown.style.height = "0px";
+          bridge.style.opacity = "1";
+        }
+      } else if (t < runTime + drawTime) {
+        // the bridge draws itself: up from evidence, right, down into refined
+        dot.style.opacity = "0";
+        const d = ease((t - runTime) / drawTime) * (rise + span + drop);
+        setUp(Math.min(rise, d));
+        segAcross.style.width = Math.max(0, Math.min(span, d - rise)).toFixed(2) + "px";
+        segDown.style.height = Math.max(0, Math.min(drop, d - rise - span)).toFixed(2) + "px";
+        bridge.style.opacity = "1";
+      } else {
+        dot.style.opacity = "0";
+        // held: the last 10px close the gap, so the path finally lands on the node
+        const link = ease((t - runTime - drawTime) / 0.4);
+        setUp(rise); segAcross.style.width = span.toFixed(2) + "px";
+        segDown.style.height = (drop + (rise - drop) * link).toFixed(2) + "px";
+        bridge.style.opacity = "1";
+      }
+      const arrived = t > runTime + drawTime;
+      const pos = t < runTime ? (t / runTime) * 0.5 : 0.5; // where the dot is along the rail
+      for (const n of nodes) {
+        let s = 1, lit = 0;
+        if (n.at <= 0.5) {
+          // lights up as the dot reaches it, then holds lit for the rest of the loop
+          lit = ease((pos - n.at) / 0.04 + 1);
+          if (t < clear) lit = Math.max(lit, 1 - ease(t / clear));
+          s = 1 + 0.4 * ease(1 - Math.abs(pos - n.at) / 0.05);
+        } else {
+          if (arrived) { s = 1.35; lit = 1; }
+          if (t < clear) { s = 1 + 0.35 * (1 - ease(t / clear)); lit = 1 - ease(t / clear); }
+        }
+        n.el.style.transform = "scale(" + s.toFixed(3) + ")";
+        n.el.style.background = lit > 0.5 ? "#101040" : n.base;
+        n.el.style.boxShadow = lit > 0.02 ? "0 0 0 " + (5 * lit).toFixed(2) + "px rgba(16,16,64," + (0.12 * lit).toFixed(3) + ")" : "none";
+      }
+      this.iterRaf = requestAnimationFrame(tick);
+    };
+    this.iterRaf = requestAnimationFrame(tick);
+  }
+
+  setupMethodology() {
+    const bars = Array.from(document.querySelectorAll("[data-meth-bar]"));
+    if (!bars.length) return;
+    const ease = v => v <= 0 ? 0 : v >= 1 ? 1 : v * v * (3 - 2 * v);
+    // each card's navy rule draws in, all four hold, then they clear together
+    const DRAW = 0.9, STAGGER = 0.42, HOLD = 2.4, OUT = 0.7;
+    const cycle = STAGGER * bars.length + DRAW + HOLD + OUT;
+    const t0 = performance.now();
+    const tick = now => {
+      if (!this.awake(document.querySelector("[data-meth-grid]"))) { this.methRaf = requestAnimationFrame(tick); return; }
+      const t = ((now - t0) / 1000) % cycle;
+      const outAt = STAGGER * bars.length + DRAW + HOLD;
+      for (let i = 0; i < bars.length; i++) {
+        let k = ease((t - i * STAGGER) / DRAW);
+        if (t > outAt) k = Math.min(k, 1 - ease((t - outAt) / OUT));
+        bars[i].style.transform = "scaleX(" + Math.max(0, k).toFixed(3) + ")";
+      }
+      this.methRaf = requestAnimationFrame(tick);
+    };
+    this.methRaf = requestAnimationFrame(tick);
+  }
+
+  setupHypothesis() {
+    const ringA = document.querySelector('[data-hyp-ring="a"]');
+    const ringB = document.querySelector('[data-hyp-ring="b"]');
+    const inner = document.querySelector("[data-hyp-inner]");
+    if (!ringA || !ringB) return;
+    const t0 = performance.now();
+    const tick = now => {
+      if (!this.awake(document.querySelector("#hypothesis figure"))) { this.hypRaf = requestAnimationFrame(tick); return; }
+      const t = (now - t0) / 1000;
+      const deg = (t / 34) * 360;
+      ringA.style.transform = "rotate(" + deg.toFixed(3) + "deg)";
+      ringB.style.transform = "rotate(" + (-deg).toFixed(3) + "deg)";
+      if (inner) inner.style.transform = "rotate(" + ((t / 96) * 360).toFixed(3) + "deg)";
+      this.hypRaf = requestAnimationFrame(tick);
+    };
+    this.hypRaf = requestAnimationFrame(tick);
+  }
+
+  setupOrbits() {
+    const rings = Array.from(document.querySelectorAll("[data-orbit]"));
+    const links = Array.from(document.querySelectorAll("[data-link]"));
+    const nodes = Array.from(document.querySelectorAll("[data-node]"));
+    if (!rings.length) return;
+    const t0 = performance.now();
+    const tick = now => {
+      if (!this.awake(document.querySelector("[data-r=\"orbit\"]"))) { this.orbitRaf = requestAnimationFrame(tick); return; }
+      const t = (now - t0) / 1000;
+      for (const r of rings) {
+        const p = parseFloat(r.dataset.period) || 30;
+        const d = parseFloat(r.dataset.dir) || 1;
+        r.style.transform = "rotate(" + ((t / p) * 360 * d) % 360 + "deg)";
+      }
+      for (const l of links) {
+        const p = parseFloat(l.dataset.period) || 12;
+        const ph = (t % p) / p;
+        l.style.opacity = ph < 0.5 ? String(Math.sin(ph * 2 * Math.PI) * 0.9) : "0";
+      }
+      for (const n of nodes) {
+        const p = parseFloat(n.dataset.period) || 9;
+        n.style.opacity = String(0.34 + 0.5 * (0.5 + 0.5 * Math.sin((t / p) * 2 * Math.PI)));
+      }
+      this.orbitRaf = requestAnimationFrame(tick);
+    };
+    this.orbitRaf = requestAnimationFrame(tick);
+  }
+
+  setupSticky() {
+    const hero = document.getElementById("top");
+    const contact = document.getElementById("contact");
+    this.atContact = false;
+    if (contact) {
+      const io = new IntersectionObserver(es => {
+        this.atContact = es.some(e => e.isIntersecting);
+        apply();
+      }, { threshold: 0 });
+      io.observe(contact);
+      this.observers.push(io);
+    }
+    const apply = () => {
+      const past = window.scrollY > (hero ? hero.offsetHeight * 0.9 : 700);
+      const show = past && !this.atContact;
+      if (show !== this.state.stickyVisible) this.setState({ stickyVisible: show });
+    };
+    let t = false;
+    this.onStickyScroll = () => { if (!t) { t = true; requestAnimationFrame(() => { t = false; apply(); }); } };
+    window.addEventListener("scroll", this.onStickyScroll, { passive: true });
+    apply();
+  }
+
+  setupProgress() {
+    const bar = document.getElementById("v2-progress");
+    if (!bar) return;
+    let ticking = false;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0) + "%";
+      ticking = false;
+    };
+    this.onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    update();
+  }
+}
+</script>
+</body>
+</html>

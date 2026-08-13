@@ -1,0 +1,33 @@
+/* Layout constants. Sonderence layouts are built on a visible 12-column
+   discipline: generous outer gutters, hairline rules between zones. */
+:root{
+  --container-narrow:720px;
+  --container-text:640px;
+  --container-max:1240px;
+  --container-wide:1440px;
+
+  --gutter-sm:20px;
+  --gutter-md:32px;
+  --gutter-lg:48px;
+
+  --grid-columns:12; /* @kind other */
+  --grid-gap:24px;
+
+  --header-height:72px;
+  --header-height-compact:56px;
+  --sidenav-width:264px;
+  --sidenav-width-collapsed:64px;
+
+  --control-height-sm:30px;
+  --control-height-md:38px;
+  --control-height-lg:46px;
+
+  --z-base:0; /* @kind other */
+  --z-raised:10; /* @kind other */
+  --z-sticky:100; /* @kind other */
+  --z-header:200; /* @kind other */
+  --z-overlay:800; /* @kind other */
+  --z-modal:900; /* @kind other */
+  --z-toast:1000; /* @kind other */
+  --z-tooltip:1100; /* @kind other */
+}
