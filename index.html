@@ -135,11 +135,12 @@
     main h2, #contact h2 { font-size: 27px !important; }
     main h3 { font-size: 19px !important; }
     main p, #top p { font-size: 16px !important; }
-    /* phones keep the orbit, but as a complete ring system centred behind the lower
-       hero — the wide layouts' off-canvas right-edge bleed only shows arcs at this width */
-    [data-r="orbit"] { top: auto !important; bottom: -210px !important; right: 50% !important; transform: translateX(50%) scale(.5) !important; }
+    /* phones tuck the orbit into the bottom-right corner, cut off on both edges the way
+       the wide layouts cut it off on the right — the arc crests just above the hero's midpoint.
+       Centre lands at (right + 450, bottom + 450); visible radius is 450 x scale. */
+    [data-r="orbit"] { top: auto !important; bottom: -360px !important; right: -360px !important; transform: scale(.51) !important; }
     /* strokes are tuned for the full-size system — at half scale they need the contrast back */
-    [data-r="orbit"] > div { border-color: rgba(255,255,255,.17) !important; }
+    [data-r="orbit"] > div { border-color: rgba(255,255,255,.19) !important; }
     [data-r="orbit"] [data-link] { border-left-color: rgba(255,255,255,.3) !important; }
     [data-r="two"], [data-r="four"], [data-meth-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     [data-r="two"] > div, [data-meth-grid] > div { padding: 24px 18px !important; }
