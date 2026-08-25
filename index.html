@@ -138,7 +138,7 @@
     /* phones tuck the orbit into the bottom-right corner, cut off on both edges the way
        the wide layouts cut it off on the right — the arc crests up by the headline's last line.
        Centre lands at (right + 450, bottom + 450); visible radius is 450 x scale. */
-    [data-r="orbit"] { top: auto !important; bottom: -270px !important; right: -360px !important; transform: scale(.51) !important; }
+    [data-r="orbit"] { top: auto !important; bottom: -290px !important; right: -360px !important; transform: scale(.51) !important; }
     /* strokes are tuned for the full-size system — at half scale they need the contrast back */
     [data-r="orbit"] > div { border-color: rgba(255,255,255,.19) !important; }
     [data-r="orbit"] [data-link] { border-left-color: rgba(255,255,255,.3) !important; }
@@ -257,19 +257,19 @@
         </div>
       </div>
       <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 152px 32px 128px;">
-        <div data-reveal="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.72);">Sonderence</div>
+        <div data-reveal="" data-open="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.72);">Sonderence</div>
         <div data-reveal="" data-r="split" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 80px; align-items: end; margin-top: 40px;">
           
-          <h1 style="margin: 0; font-family: Onest, system-ui, sans-serif; font-size: 76px; line-height: 1.04; letter-spacing: -0.03em; font-weight: 600; color: #FFFFFF; text-wrap: balance;">Digital partners that understand your business.</h1><div style="padding-bottom: 8px;">
-            <p style="margin: 0; font-size: 18px; line-height: 1.65; color: rgba(255,255,255,.72); text-wrap: pretty;">Sonderence designs digital ecosystems around the way a business actually works — as an embedded partner, not an outside vendor.</p>
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 28px;">
+          <h1 data-open="" style="margin: 0; font-family: Onest, system-ui, sans-serif; font-size: 76px; line-height: 1.04; letter-spacing: -0.03em; font-weight: 600; color: #FFFFFF; text-wrap: balance;">Digital partners that understand your business.</h1><div style="padding-bottom: 8px;">
+            <p data-open="" style="margin: 0; font-size: 18px; line-height: 1.65; color: rgba(255,255,255,.72); text-wrap: pretty;">Sonderence designs digital ecosystems around the way a business actually works — as an embedded partner, not an outside vendor.</p>
+            <div data-open="" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 28px;">
               <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" variant="inverse" size="lg" as="a" href="https://calendly.com/elly-sonderence/book-digital-strategy-call" hint-size="auto,48px">Book your Foundation assessment</x-import>
               <a href="#services" style="display: inline-flex; align-items: center; gap: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.34); font-size: 15px; font-weight: 500; color: #FFFFFF;" style-hover="border-bottom-color: #FFFFFF; color: #FFFFFF;">
                 <span>See the working set</span>
                 <span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span>
               </a>
             </div>
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: rgba(255,255,255,.62);">
+            <div data-open="" style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: rgba(255,255,255,.62);">
               <span>ZERO COST</span>
               <span aria-hidden="true" style="width: 14px; height: 1px; background: rgba(255,255,255,.34);"></span>
               <span>45 minutes</span>
@@ -1020,6 +1020,7 @@ class Component extends DCLogic {
     this.setupIteration();
     this.setupCtaGrid();
     this.setupPageFade();
+    this.setupOpener();
     this.onDocClick = e => {
       if (!this.state.processOpen) return;
       if (e.target.closest && e.target.closest("nav")) return;
@@ -1076,6 +1077,91 @@ class Component extends DCLogic {
     root.style.transition = "opacity 300ms cubic-bezier(.16,1,.3,1)";
     root.style.opacity = "0";
     requestAnimationFrame(() => { root.style.opacity = "1"; });
+  }
+
+  // The first arrival in a tab gets the branded curtain; refreshes, back-navigation and
+  // internal links skip straight to the hero cascade. The flag lives in sessionStorage so
+  // it clears with the tab instead of following the visitor around forever.
+  setupOpener() {
+    const hero = document.getElementById("top");
+    if (!hero) return;
+    // reduced motion keeps the page exactly as authored — no curtain, nothing staged hidden
+    if (this.motion === "none") return;
+    const steps = Array.from(hero.querySelectorAll("[data-open]"));
+    const orbit = hero.querySelector("[data-r=\"orbit\"]");
+
+    let seen = false;
+    try { seen = sessionStorage.getItem("son-opened") === "1"; } catch (e) {}
+
+    // staging is done from JS, never CSS, so a script that fails to run leaves the hero
+    // fully visible rather than permanently blank
+    for (const el of steps) {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(14px)";
+      el.style.willChange = "opacity, transform";
+    }
+    if (orbit) orbit.style.opacity = "0";
+
+    const cascade = () => {
+      steps.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.transition = "opacity 520ms cubic-bezier(.16,1,.3,1), transform 520ms cubic-bezier(.16,1,.3,1)";
+          el.style.opacity = "1";
+          el.style.transform = "none";
+          el.addEventListener("transitionend", () => {
+            el.style.willChange = ""; el.style.transition = ""; el.style.transform = "";
+          }, { once: true });
+        }, i * 90);
+      });
+      if (orbit) {
+        // the rings come up slower than the copy so they settle behind it rather than with it
+        orbit.style.transition = "opacity 1200ms cubic-bezier(.16,1,.3,1)";
+        orbit.addEventListener("transitionend", () => { orbit.style.transition = ""; }, { once: true });
+        requestAnimationFrame(() => { orbit.style.opacity = ""; });
+      }
+    };
+
+    if (seen) { requestAnimationFrame(cascade); return; }
+    try { sessionStorage.setItem("son-opened", "1"); } catch (e) {}
+    this.runCurtain(cascade);
+  }
+
+  runCurtain(done) {
+    const curtain = document.createElement("div");
+    curtain.setAttribute("aria-hidden", "true");
+    curtain.style.cssText = "position:fixed; inset:0; z-index:400; background:#101040; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; transition:opacity 460ms cubic-bezier(.16,1,.3,1);";
+
+    const mark = document.createElement("div");
+    mark.textContent = "Sonderence";
+    mark.style.cssText = "font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:11px; font-weight:500; letter-spacing:.34em; text-transform:uppercase; color:#FFFFFF; opacity:0; transform:translateY(6px); transition:opacity 420ms cubic-bezier(.16,1,.3,1), transform 420ms cubic-bezier(.16,1,.3,1);";
+
+    const rail = document.createElement("div");
+    rail.style.cssText = "width:132px; height:1px; background:rgba(255,255,255,.18); overflow:hidden;";
+    const fill = document.createElement("div");
+    fill.style.cssText = "width:0%; height:1px; background:#FFFFFF; transition:width 780ms cubic-bezier(.33,1,.68,1);";
+    rail.appendChild(fill);
+
+    curtain.appendChild(mark);
+    curtain.appendChild(rail);
+    document.body.appendChild(curtain);
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+      mark.style.opacity = "1";
+      mark.style.transform = "none";
+      fill.style.width = "100%";
+    });
+
+    // the curtain starts clearing while the cascade runs, so the hero is already
+    // composing itself as it is uncovered rather than waiting for a clean handoff
+    setTimeout(() => {
+      curtain.style.opacity = "0";
+      document.body.style.overflow = prevOverflow;
+      done();
+      setTimeout(() => curtain.remove(), 520);
+    }, 880);
   }
 
   get motion() {
