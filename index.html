@@ -135,7 +135,12 @@
     main h2, #contact h2 { font-size: 27px !important; }
     main h3 { font-size: 19px !important; }
     main p, #top p { font-size: 16px !important; }
-    [data-r="orbit"] { display: none !important; }
+    /* phones keep the orbit, but as a complete ring system centred behind the lower
+       hero — the wide layouts' off-canvas right-edge bleed only shows arcs at this width */
+    [data-r="orbit"] { top: auto !important; bottom: -210px !important; right: 50% !important; transform: translateX(50%) scale(.5) !important; }
+    /* strokes are tuned for the full-size system — at half scale they need the contrast back */
+    [data-r="orbit"] > div { border-color: rgba(255,255,255,.17) !important; }
+    [data-r="orbit"] [data-link] { border-left-color: rgba(255,255,255,.3) !important; }
     [data-r="two"], [data-r="four"], [data-meth-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     [data-r="two"] > div, [data-meth-grid] > div { padding: 24px 18px !important; }
     [data-r="four"] > div:last-child { grid-column: span 2 !important; }
@@ -1496,9 +1501,7 @@ class Component extends DCLogic {
     const nodes = Array.from(document.querySelectorAll("[data-node]"));
     if (!rings.length) return;
     const t0 = performance.now();
-    const tick = now => {
-      if (!this.awake(document.querySelector("[data-r=\"orbit\"]"))) { this.orbitRaf = requestAnimationFrame(tick); return; }
-      const t = (now - t0) / 1000;
+    const paint = t => {
       for (const r of rings) {
         const p = parseFloat(r.dataset.period) || 30;
         const d = parseFloat(r.dataset.dir) || 1;
@@ -1513,6 +1516,19 @@ class Component extends DCLogic {
         const p = parseFloat(n.dataset.period) || 9;
         n.style.opacity = String(0.34 + 0.5 * (0.5 + 0.5 * Math.sin((t / p) * 2 * Math.PI)));
       }
+    };
+    // reduced motion keeps the composition and drops the movement — one settled frame,
+    // links drawn, rather than an empty space where the hero graphic should be
+    if (this.motion === "none") { paint(4); return; }
+    const tick = now => {
+      if (!this.awake(document.querySelector("[data-r=\"orbit\"]"))) { this.orbitRaf = requestAnimationFrame(tick); return; }
+      // the phone layout puts the whole ring system on screen; at a 13–42s rotation
+      // ~30fps is indistinguishable and halves the work on a phone
+      if (window.innerWidth <= 620) {
+        if (now - (this._orbitLast || 0) < 32) { this.orbitRaf = requestAnimationFrame(tick); return; }
+        this._orbitLast = now;
+      }
+      paint((now - t0) / 1000);
       this.orbitRaf = requestAnimationFrame(tick);
     };
     this.orbitRaf = requestAnimationFrame(tick);
