@@ -101,7 +101,7 @@
   }
 
   @media (max-width: 900px) {
-    header nav, header [data-chapter-label] { display: none !important; }
+    header nav, header [data-chapter-label], header [data-r="loginlink"] { display: none !important; }
     [data-r="burger"] { display: inline-flex !important; }
     [data-r="mobilemenu"] { display: block; }
     [data-r="split"], [data-r="band"], [data-r="ctabox"], [data-r="figsplit"], [data-r="three"] { grid-template-columns: minmax(0, 1fr) !important; }
@@ -191,6 +191,7 @@
       </nav>
       <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; gap: 20px;">
         <span data-chapter-label="" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .10em; text-transform: uppercase; color: #7C7C96; white-space: nowrap;">{{ chapterLabel }}</span>
+        <a href="https://sonderence.myassembly.com/login" target="_blank" rel="noopener" data-r="loginlink" style="font-size: 14px; font-weight: 500; color: #101040; white-space: nowrap;" style-hover="color: #7C7C96;">Client login</a>
         <x-import component-from-global-scope="SonderenceDesignSystem_3123e6.Button" size="sm" as="a" data-fillout-id="3Yy3t6giEhus" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="medium" style="border-radius: 999px; padding: 0 20px;" hint-size="auto,36px">Book a call</x-import>
         <button type="button" data-r="burger" onClick="{{ toggleMenu }}" aria-label="Menu" aria-expanded="{{ menuOpen }}" style="align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; padding: 0; cursor: pointer;">
           <span aria-hidden="true" style="display: flex; flex-direction: column; gap: 5px; width: 20px;">
@@ -216,6 +217,7 @@
           <a href="#services" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 500; color: #101040;">Services</a>
           <a href="#about" onClick="{{ closeMenu }}" style="display: flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 500; color: #101040;">About</a>
           <a data-fillout-id="3Yy3t6giEhus" data-fillout-embed-type="popup" data-fillout-dynamic-resize data-fillout-inherit-parameters data-fillout-popup-size="medium" onClick="{{ closeMenu }}" style="display: flex; align-items: center; justify-content: space-between; min-height: 48px; margin-top: 12px; padding: 0 20px; background: #101040; color: #FFFFFF; font-size: 15px; font-weight: 500;" style-hover="background: #1B1B55; color: #FFFFFF;"><span>Book a call</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
+          <a href="https://sonderence.myassembly.com/login" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display: flex; align-items: center; justify-content: space-between; min-height: 48px; margin-top: 12px; padding: 0 20px; background: #FFFFFF; color: #101040; border: 1px solid #101040; font-size: 15px; font-weight: 500;" style-hover="background: #F7F7F9; color: #101040;"><span>Client login</span><span aria-hidden="true" style="font-family: 'IBM Plex Mono', monospace;">→</span></a>
         </div>
       </div>
     </sc-if>
@@ -531,7 +533,7 @@
               <img src="" alt="" style="max-width: 100%; height: 30px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
             </div>
             <div style="display: flex; align-items: center; justify-content: center; padding: 28px 20px; background: #FFFFFF; min-height: 92px;">
-              <img src="assets/logo-jayco.png" alt="Jayco Mailboxes logo" style="max-width: 100%; height: 26px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
+              <img src="" alt="" style="max-width: 100%; height: 26px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
             </div>
             <div style="display: flex; align-items: center; justify-content: center; padding: 28px 20px; background: #FFFFFF; min-height: 92px;">
               <img src="assets/logo-indivisualeyes.png" alt="IndiVisual Eyes logo" style="max-width: 100%; height: 24px; width: auto; object-fit: contain; filter: grayscale(1) contrast(.95); opacity: .62; transition: filter 80ms cubic-bezier(.2,0,0,1), opacity 80ms cubic-bezier(.2,0,0,1);" style-hover="filter: grayscale(0); opacity: 1;">
@@ -913,6 +915,7 @@
             <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7C7C96; margin-bottom: 4px;">Practice</div>
             <a href="#services" style="font-size: 14px; color: #101040;">The working set</a>
             <a href="#about" style="font-size: 14px; color: #101040;">About</a>
+            <a href="https://sonderence.myassembly.com/login" target="_blank" rel="noopener" style="font-size: 14px; color: #101040;">Client login</a>
           </div>
         </div>
       </div>
